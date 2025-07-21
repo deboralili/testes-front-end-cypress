@@ -89,7 +89,7 @@ Se o projeto for bem grande, pergunte para a equipe se existe uma pasta específ
 
 > ❗ Atenção: você não deve usar `npm init` nesse caso, pois o projeto já tem sua estrutura configurada.
 
-### 📦 Instalando o Cypress
+### Instalando o Cypress
 
 Digite o seguinte comando no terminal para realizar a instalação.
 
