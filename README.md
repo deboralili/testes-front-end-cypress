@@ -8,6 +8,8 @@ Se você está começando agora e quer um passo a passo completo com explicaçõ
 
 ➡️ [Guia para iniciantes - Cypress](./guia-cypress.md)
 
+---
+
 > Este repositório faz parte da minha série de estudos com diferentes tecnologias de testes automatizados. Aqui, o foco está exclusivamente no **Cypress**.
 
 📌 *Novos exercícios serão adicionados conforme eu avanço nos estudos!*
