@@ -69,7 +69,7 @@ O `-y` apenas aceita todas as opções padrão automaticamente.
 npm init -y
 ```
 
-Com o projeto criado, agora vamos [instalar o Cypress](#3-instalando-o-cypress) como uma dependência de desenvolvimento.
+Com o projeto criado, agora vamos [instalar o Cypress](#instalando-o-cypress) como uma dependência de desenvolvimento.
 
 ### 2. Usar Cypress em um projeto existente
 
