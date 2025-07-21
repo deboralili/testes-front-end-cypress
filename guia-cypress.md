@@ -38,6 +38,7 @@ Existem duas formas comuns de começar a usar o Cypress. Escolha a que se aplica
 Se você está apenas estudando ou começando um projeto separado só para testes, siga estes passos e digite os comandos no terminal.
 
 #### 🧱 Crie uma pasta para o projeto
+
 Primeiro, vá até o local onde deseja criar a pasta do projeto.
 ```
 cd caminho/para/o/diretorio/desejado
@@ -60,18 +61,62 @@ cd nome-do-projeto
 ```
 
 #### 📦 Inicie o projeto com Node.js
-Esse passo cria o arquivo package.json, que vai armazenar as dependências do projeto (como o Cypress).
+
+Esse passo cria o arquivo `package.json`, que vai armazenar as dependências do projeto (como o Cypress).
 <br/>
 O `-y` apenas aceita todas as opções padrão automaticamente.
 ```
 npm init -y
 ```
+
+Com o projeto criado, agora vamos [instalar o Cypress](#3-instalando-o-cypress) como uma dependência de desenvolvimento.
+
+### 2. Usar Cypress em um projeto existente
+
+Se você já está em um projeto da empresa (ou de um time de desenvolvimento), o Cypress deve ser adicionado **dentro do mesmo repositório da aplicação**.
+
+> 👀 Por que usar no mesmo projeto?
+> - Os testes interagem com a interface real da aplicação.
+> - Você garante que está testando o que o usuário realmente verá.
+> - Os testes e o código ficam versionados juntos (boas práticas de CI/CD).
+> - QA e devs compartilham o mesmo ambiente.
+
+#### 🔎 Verifique se o projeto já tem Node.js
+
+Acesse a pasta do projeto e veja se existe um `package.json`. Se sim, você pode instalar o Cypress direto.
+<br/>
+Se o projeto for bem grande, pergunte para a equipe se existe uma pasta específica para testes (tests/, qa/, ou cypress/) ou siga o padrão mais comum, criando a estrutura que o próprio Cypress propõe.
+
+> ❗ Atenção: você não deve usar `npm init` nesse caso, pois o projeto já tem sua estrutura configurada.
+
 ### 📦 Instalando o Cypress
-Com o projeto criado, agora vamos instalar o Cypress como uma dependência de desenvolvimento.
+
+Digite o seguinte comando no terminal para realizar a instalação.
+
 ```
 npm install cypress --save-dev
 ```
+
 > 🔍 Por que --save-dev?
 > <br/>Porque o Cypress será usado apenas no processo de desenvolvimento e teste, e não na execução do código final em produção.
 
+#### Abrindo o Cypress pela primeira vez
 
+Depois de instalado, você pode abrir o Cypress com o comando:
+
+```
+npx cypress open
+```
+> 📌 O `npx` executa o Cypress diretamente da pasta `node_modules`, sem precisar instalar globalmente.
+
+Este comando abrirá a interface visual do Cypress. Na primeira vez, ele também criará automaticamente algumas pastas e arquivos para organizar seus testes.
+
+### 🗂️ Estrutura criada automaticamente pelo Cypress
+
+Ao rodar `npx cypress open` pela primeira vez, o Cypress cria a seguinte estrutura de pastas no seu projeto:
+
+cypress/<br/>
+├── e2e/           ← Onde ficam os arquivos de testes end-to-end<br/>
+├── fixtures/      ← Arquivos de dados falsos (mocks) usados nos testes<br/>
+├── support/       ← Código de apoio (como comandos reutilizáveis)<br/>
+cypress.config.js  ← Arquivo de configuração do Cypress
