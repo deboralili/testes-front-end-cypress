@@ -113,7 +113,7 @@ Este comando abrirá a interface visual do Cypress. Na primeira vez, ele também
 
 ### 🗂️ Estrutura criada automaticamente pelo Cypress
 
-Ao rodar `npx cypress open` pela primeira vez, o Cypress cria a seguinte estrutura de pastas no seu projeto:
+O Cypress cria a seguinte estrutura de pastas no seu projeto:
 
 cypress/<br/>
 ├── e2e/           ← Onde ficam os arquivos de testes end-to-end<br/>
