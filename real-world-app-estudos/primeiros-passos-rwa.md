@@ -7,7 +7,7 @@ testes-front-end-cypress/<br/>
 ├── guia-cypress.md<br/>
 ├── README.md<br/>
 ├── real-world-app-estudos/<br/>
-│ ├── projeto/ ← (código clonado do RWA)<br/>
+│ ├── cypress-realworld-app/ ← (código clonado do RWA)<br/>
 │ ├── documentos/<br/>
 │ └── primeiros-passos-rwa.md<br/>
 
@@ -40,7 +40,7 @@ node -v
 ```
 npm -v
 ```
-Se aparecer a versão de cada um, o Node.js e o npm já está instalado. 
+Se aparecer a versão de cada um, o Node.js e o npm já estão instalados. 
 Se ocorrer um erro, será necessário instalar através do site oficial.
 
 Recomenda-se a versão LTS (Long Term Support) para maior estabilidade.
@@ -61,7 +61,7 @@ Com o comando a seguir, a versão mais recente do Yarn será instalada globalmen
 npm install yarn@latest -g
 ```
 ### 3. Criação da estrutura de pastas para o projeto
-O comando `mkdir`cria a pasta onde todo o projeto (código + documentos) ficará armazenado.
+O comando `mkdir`cria a pasta onde todos os arquivos referentes ao projeto (código + documentos) ficarão armazenados.
 ```
 mkdir real-world-app-estudos
 ```
@@ -77,35 +77,45 @@ O comando `touch` criará o arquivo `primeiros-passos-rwa.md`.
 ```
 touch primeiros-passos-rwa.md
 ```
-Volta para a raiz das pastas `testes-front-end-cypress`.
+Volta para a raiz do repositório `testes-front-end-cypress`.
 ```
 cd ..
 ```
-### 4. Clonar o projeto Real World App na pasta `projeto`
-Este código clona o repositório oficial do projeto RWA dentro da subpasta `projeto`. Assim, o código fica separado dos arquivos de documentação.
+### 4. Clonar o projeto Real World App na pasta `real-world-app-estudos`
+Este código clona o repositório oficial do projeto RWA dentro da pasta `real-world-app-estudos`. Assim, o código fica separado dos arquivos de documentação.
 ```
-git clone https://github.com/cypress-io/cypress-realworld-app real-world-app-estudos/projeto
+git clone https://github.com/cypress-io/cypress-realworld-app real-world-app-estudos
 ```
-### 5. Remover o `.git` do projeto clonado
-O projeto clonado já vem com seu próprio repositório Git.
-Como eu quero versionar tudo junto no repositório principal, eu preciso remover esse `.git` interno para evitar conflitos.
-```
-rm -rf real-world-app-estudos/projeto/.git
-```
-### 6. Instalar as dependências com Yarn
+### 5. Instalar as dependências com Yarn
 Entra na pasta projeto.
 ```
-cd real-world-app-estudos/projeto
+cd real-world-app-estudos/cypress-realworld-app
 ```
 Instala todas as dependências listadas no `package.json.`
 ```
 yarn
 ```
-Volta para a raiz do repositório.
+Verifica se o projeto roda.
+```
+yarn dev
+```
+Para interromper, basta pressionar `Ctrl + C`.
+
+### 6. Remover o `.git` do projeto clonado
+O projeto clonado já vem com seu próprio repositório Git.
+Como eu quero versionar tudo junto no repositório principal, eu preciso remover esse `.git` interno para evitar conflitos.
+```
+rm -rf real-world-app-estudos/cypress-realworld-app/.git
+```
+> ⚠️ Atenção:
+Não faça `git add .` ou `git commit` **antes** de remover o `.git` interno.
+Se você commitar com o `.git` ainda lá dentro, o repositório principal não vai rastrear os arquivos do projeto.
+
+### 7. Adicionar tudo ao repositório
+Volta para a raiz.
 ```
 cd ../..
 ```
-### 7. Adicionar tudo ao repositório
 Adiciona todas as novas pastas e arquivos ao Git.
 ```
 git add .
@@ -119,3 +129,4 @@ Envia as mudanças para o repositório remoto no GitHub.
 ```
 git push origin main
 ```
+
