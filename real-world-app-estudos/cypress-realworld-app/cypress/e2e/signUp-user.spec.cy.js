@@ -1,3 +1,5 @@
+import userData from '../fixtures/userData.json'
+
 describe('Real World App - Tests', () => {
   
   const selectorsList = {
@@ -10,22 +12,14 @@ describe('Real World App - Tests', () => {
     signUpButton: "[data-test='signup-submit']"
   }
 
-  const signUpData = {
-    firstName: 'Jessica',
-    lastName: 'Canto',
-    username: 'jess001',
-    password: 'Senh@001',
-    confirmPassword: 'Senh@001'
-  }
-
   it('SignUp User - Success', () => {
     cy.visit('http://localhost:3000/signin')
     cy.get(selectorsList.signUpLink).click()
-    cy.get(selectorsList.firstName).type(signUpData.firstName)
-    cy.get(selectorsList.lastName).type(signUpData.lastName)
-    cy.get(selectorsList.username).type(signUpData.username)
-    cy.get(selectorsList.password).type(signUpData.password)
-    cy.get(selectorsList.confirmPassword).type(signUpData.confirmPassword)
+    cy.get(selectorsList.firstName).type(userData.firstName)
+    cy.get(selectorsList.lastName).type(userData.lastName)
+    cy.get(selectorsList.username).type(userData.username)
+    cy.get(selectorsList.password).type(userData.password)
+    cy.get(selectorsList.confirmPassword).type(userData.password)
     cy.get(selectorsList.signUpButton).click()
     cy.location('pathname').should('equal', '/signin')
   })
