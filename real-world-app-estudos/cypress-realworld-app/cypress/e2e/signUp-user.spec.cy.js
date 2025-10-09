@@ -1,26 +1,23 @@
 import userData from '../fixtures/userData.json'
+import SignUpPage from '../pages/signUpPage.js'
+import LoginPage from '../pages/loginPage.js'
+
+const signUpPage = new SignUpPage()
+const loginPage = new LoginPage()
 
 describe('Real World App - Tests', () => {
-  
-  const selectorsList = {
-    signUpLink: "[data-test='signup']",
-    firstName: "[data-test='signup-first-name']",
-    lastName: "[data-test='signup-last-name']",
-    username: "[data-test='signup-username']",
-    password: "[data-test='signup-password']",
-    confirmPassword: "[data-test='signup-confirmPassword']",
-    signUpButton: "[data-test='signup-submit']"
-  }
 
+  //TC-001: Cadastrar usuario com informacoes validas
   it('SignUp User - Success', () => {
-    cy.visit('http://localhost:3000/signin')
-    cy.get(selectorsList.signUpLink).click()
-    cy.get(selectorsList.firstName).type(userData.firstName)
-    cy.get(selectorsList.lastName).type(userData.lastName)
-    cy.get(selectorsList.username).type(userData.username)
-    cy.get(selectorsList.password).type(userData.password)
-    cy.get(selectorsList.confirmPassword).type(userData.password)
-    cy.get(selectorsList.signUpButton).click()
-    cy.location('pathname').should('equal', '/signin')
+    signUpPage.accessSignUpPage()
+
+    signUpPage.signUpWithAnyUser(
+      userData.userSuccess.firstName,
+      userData.userSuccess.lastName,
+      userData.userSuccess.username,
+      userData.userSuccess.password
+    )
+
+    loginPage.checkLoginPage()
   })
 })
