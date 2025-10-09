@@ -1,6 +1,8 @@
 {
-    "firstName": "Jessica",
-    "lastName": "Canto",
-    "username": "jess001",
-    "password": "Senh@001"
+    "userSuccess": {
+        "firstName": "Jessica",
+        "lastName": "Canto",
+        "username": "jess001",
+        "password": "Senh@001"
+    }
 }
