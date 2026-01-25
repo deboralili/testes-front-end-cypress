@@ -14,7 +14,9 @@ Repo do RWA: https://github.com/cypress-io/cypress-realworld-app
 As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no aplicativo Real World App, permitindo que os usuários acessem suas contas existentes ou criem novas contas. Vamos criar casos de teste para garantir que essas funcionalidades funcionem corretamente:
 
 **Caso de Teste: Login com sucesso.** <br/>
-**Descrição:** Verifique se é possível fazer login com um usuário válido, inserindo as informações corretas.
+**Descrição:** Verifique se é possível fazer login com um usuário válido, inserindo as informações corretas. <br/>
+[Link para o Cenário de Teste](real-world-app-estudos/documentos/cenarios/login.md#sc-001)
+
 
 **Caso de Teste:** Tentar fazer login com credenciais inválidas.<br/>
 **Descrição:** Garanta que o sistema exiba uma mensagem de erro ao tentar fazer login com credenciais inválidas (email ou senha incorretos).
