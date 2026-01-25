@@ -7,9 +7,11 @@
       Título
     </th>
   </tr>
-  <tr id = "sc-001">
+  <tr>
     <td>
-      SC-001
+      <a id = "sc-001">
+        SC-001
+      </a>
     </td>
     <td>
       O usuário deve conseguir realizar login ao informar credenciais válidas.
