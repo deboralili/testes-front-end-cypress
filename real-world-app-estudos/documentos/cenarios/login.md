@@ -8,7 +8,7 @@
     </th>
   </tr>
   <tr>
-    <td name = "sc-001">
+    <td id = "sc-001">
       SC-001
     </td>
     <td>
