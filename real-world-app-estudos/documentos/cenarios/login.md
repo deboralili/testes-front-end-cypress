@@ -7,8 +7,8 @@
       Título
     </th>
   </tr>
-  <tr>
-    <td id = "sc-001">
+  <tr id = "sc-001">
+    <td>
       SC-001
     </td>
     <td>
