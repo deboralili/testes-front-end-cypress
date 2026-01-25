@@ -74,6 +74,17 @@
       "balance": 49474,
       "createdAt": "2023-12-07T04:39:38.383Z",
       "modifiedAt": "2024-03-07T00:07:36.510Z"
+    },
+    {
+      "id": "oI5IORRA-",
+      "uuid": "d045c8a9-3e9c-4b32-bb11-468b850c695f",
+      "firstName": "QA",
+      "lastName": "Teste",
+      "username": "qa_teste",
+      "password": "$2a$10$u4QvoEZO8ReonOjmm1tolOEpEGuYfr7iS9pj6y2woV3s6xIAi3xD2",
+      "balance": 0,
+      "createdAt": "2026-01-21T17:06:29.781Z",
+      "modifiedAt": "2026-01-21T17:06:29.781Z"
     }
   ],
   "contacts": [
