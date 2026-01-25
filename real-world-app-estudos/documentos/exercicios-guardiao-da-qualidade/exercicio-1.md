@@ -15,7 +15,7 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 
 **Caso de Teste: Login com sucesso.** <br/>
 **Descrição:** Verifique se é possível fazer login com um usuário válido, inserindo as informações corretas. <br/>
-[Link para o Cenário de Teste](real-world-app-estudos/documentos/cenarios/login.md#sc-001)
+[Link para o Cenário de Teste](real-world-app-estudos/documentos/cenarios/login.md)
 
 
 **Caso de Teste:** Tentar fazer login com credenciais inválidas.<br/>
