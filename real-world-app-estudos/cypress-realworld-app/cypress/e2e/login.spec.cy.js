@@ -21,6 +21,19 @@ describe('SC-001: Login com sucesso', () => {
 
         //Verifica se tem guia de transacao da tela Home
         cy.get('[data-test="nav-transaction-tabs"]');
+
+        //Acessa a janela do navegador
+        cy.window().then((win) => {
+
+            //Acessa localStorage
+            const data = win.localStorage.getItem('authState');
+
+            //Transforma em objeto
+            const authState = JSON.parse(data);
+
+            //Verifica se tem o valor esperado
+            expect(authState.value).to.equal('authorized');
+        });
     });
 });
 
