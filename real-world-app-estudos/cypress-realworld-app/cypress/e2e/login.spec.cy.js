@@ -15,6 +15,12 @@ describe('SC-001: Login com sucesso', () => {
 
         //Clica no botão para fazer login
         cy.get('[data-test="signin-submit"]').click();
+
+        //Verifica se o nome de usuario esta na pagina
+        cy.get('[data-test="sidenav-username"]').contains('qa_teste');
+
+        //Verifica se tem guia de transacao da tela Home
+        cy.get('[data-test="nav-transaction-tabs"]');
     });
 });
 
