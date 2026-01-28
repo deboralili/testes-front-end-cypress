@@ -85,17 +85,6 @@
       "balance": 0,
       "createdAt": "2026-01-21T17:06:29.781Z",
       "modifiedAt": "2026-01-21T17:06:29.781Z"
-    },
-    {
-      "id": "FJVH48sz9",
-      "uuid": "1098cde1-cc31-46eb-ba9d-9372d8441ccf",
-      "firstName": "Jessica",
-      "lastName": "Canto",
-      "username": "jess001",
-      "password": "$2a$10$XfPelefmigrau4E6fsa23u44NTCjSaIoQTIp6kdVww1YT73Gii6Dm",
-      "balance": 0,
-      "createdAt": "2026-01-21T17:11:43.875Z",
-      "modifiedAt": "2026-01-21T17:11:43.875Z"
     }
   ],
   "contacts": [
@@ -277,26 +266,15 @@
       "modifiedAt": "2024-03-07T08:44:31.174Z"
     },
     {
-      "id": "zxnE_VeDa",
-      "uuid": "5254231b-3db4-49a3-8596-5db44574d6ed",
+      "id": "z8oCJBKID",
+      "uuid": "05c89444-94b4-4a41-b707-cd5c0c4ab5ef",
       "userId": "oI5IORRA-",
       "bankName": "Banco Cypress",
       "accountNumber": "bhjhgujgj",
       "routingNumber": "001001001",
       "isDeleted": false,
-      "createdAt": "2026-01-21T17:10:56.449Z",
-      "modifiedAt": "2026-01-21T17:10:56.449Z"
-    },
-    {
-      "id": "0kzI3l6Bd",
-      "uuid": "16c27351-c56d-4711-8114-125f9dfc8329",
-      "userId": "FJVH48sz9",
-      "bankName": "Banco Cypress",
-      "accountNumber": "bhjhgujgj",
-      "routingNumber": "001001001",
-      "isDeleted": false,
-      "createdAt": "2026-01-21T17:12:50.388Z",
-      "modifiedAt": "2026-01-21T17:12:50.388Z"
+      "createdAt": "2026-01-28T14:30:55.930Z",
+      "modifiedAt": "2026-01-28T14:30:55.930Z"
     }
   ],
   "transactions": [

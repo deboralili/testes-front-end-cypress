@@ -1,5 +1,16 @@
+import userData from '../fixtures/userData.json'
+
 //Suite de testes (cenario de teste)
 describe('SC-001: Login com sucesso', () => {
+
+    const selectorsList = {
+        loginURL: "http://localhost:3000/signin",
+        usernameField: "[data-test='signin-username']",
+        passwordField: "[data-test='signin-password']",
+        signinButton: "[data-test='signin-submit']",
+        usernameLogged: "[data-test='sidenav-username']",
+        transactionTab: "[data-test='nav-transaction-tabs']"
+    }
 
     //caso de teste
     it('TC-001: Deve fazer login com credenciais validas', () => {
@@ -7,16 +18,16 @@ describe('SC-001: Login com sucesso', () => {
         cy.intercept('POST', '**/login').as('loginRequest');
 
         //Acessa a pagina de login
-        cy.visit("http://localhost:3000/signin");
+        cy.visit(selectorsList.loginURL);
 
         //Preenche o campo username com nome de usuario valido
-        cy.get('[data-test="signin-username"]').type('qa_teste');
+        cy.get(selectorsList.usernameField).type(userData.userSuccess.username);
 
         //Preenche o campo password com senha correspondente valida
-        cy.get('[data-test="signin-password"]').type('1234');
+        cy.get(selectorsList.passwordField).type(userData.userSuccess.password);
 
         //Clica no botão para fazer login
-        cy.get('[data-test="signin-submit"]').click();
+        cy.get(selectorsList.signinButton).click();
 
         //Espera a resposta do servidor
         cy.wait('@loginRequest').then((interception) => {
@@ -25,10 +36,10 @@ describe('SC-001: Login com sucesso', () => {
         });
 
         //Verifica se o nome de usuario esta na pagina
-        cy.get('[data-test="sidenav-username"]').should('be.visible').and('contain', 'qa_teste');
+        cy.get(selectorsList.usernameLogged).should('be.visible').and('contain', 'qa_teste');
 
         //Verifica se tem a guia de transacao da tela Home
-        cy.get('[data-test="nav-transaction-tabs"]').should('be.visible');
+        cy.get(selectorsList.transactionTab).should('be.visible');
     });
 });
 
