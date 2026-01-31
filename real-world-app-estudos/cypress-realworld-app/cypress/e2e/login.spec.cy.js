@@ -1,15 +1,12 @@
 import userData from '../fixtures/userData.json'
 import LoginPage from '../pages/loginPage';
+import HomePage from '../pages/homePage';
 
 const loginPage = new LoginPage();
+const homePage = new HomePage();
 
 //Suite de testes (cenario de teste)
 describe('SC-001: Login com sucesso', () => {
-
-    const selectorsList = {
-        usernameLogged: "[data-test='sidenav-username']",
-        transactionTab: "[data-test='nav-transaction-tabs']"
-    }
 
     //caso de teste
     it('TC-001: Deve fazer login com credenciais validas', () => {
@@ -29,10 +26,10 @@ describe('SC-001: Login com sucesso', () => {
         });
 
         //Verifica se o nome de usuario esta na pagina
-        cy.get(selectorsList.usernameLogged).should('be.visible').and('contain', 'qa_teste');
+        homePage.checkUsernameLogged(userData.userSuccess.username);
 
         //Verifica se tem a guia de transacao da tela Home
-        cy.get(selectorsList.transactionTab).should('be.visible');
+        homePage.checkHomePage();
     });
 });
 
