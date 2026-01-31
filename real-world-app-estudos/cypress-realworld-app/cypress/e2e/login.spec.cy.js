@@ -1,13 +1,12 @@
 import userData from '../fixtures/userData.json'
+import LoginPage from '../pages/loginPage';
+
+const loginPage = new LoginPage();
 
 //Suite de testes (cenario de teste)
 describe('SC-001: Login com sucesso', () => {
 
     const selectorsList = {
-        loginURL: "http://localhost:3000/signin",
-        usernameField: "[data-test='signin-username']",
-        passwordField: "[data-test='signin-password']",
-        signinButton: "[data-test='signin-submit']",
         usernameLogged: "[data-test='sidenav-username']",
         transactionTab: "[data-test='nav-transaction-tabs']"
     }
@@ -18,16 +17,10 @@ describe('SC-001: Login com sucesso', () => {
         cy.intercept('POST', '**/login').as('loginRequest');
 
         //Acessa a pagina de login
-        cy.visit(selectorsList.loginURL);
+        loginPage.accessLoginPage();
 
-        //Preenche o campo username com nome de usuario valido
-        cy.get(selectorsList.usernameField).type(userData.userSuccess.username);
-
-        //Preenche o campo password com senha correspondente valida
-        cy.get(selectorsList.passwordField).type(userData.userSuccess.password);
-
-        //Clica no botão para fazer login
-        cy.get(selectorsList.signinButton).click();
+        //Preeche formulario e clica no botao de signin
+        loginPage.loginWithUser(userData.userSuccess.username, userData.userSuccess.password);
 
         //Espera a resposta do servidor
         cy.wait('@loginRequest').then((interception) => {
