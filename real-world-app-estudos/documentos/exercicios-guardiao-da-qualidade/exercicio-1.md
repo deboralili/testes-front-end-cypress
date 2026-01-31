@@ -34,13 +34,43 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 
 Agora que você criou os casos de teste, é hora de automatizá-los usando o Cypress.io. Certifique-se de que o projeto "Real World App" esteja configurado corretamente no seu ambiente de desenvolvimento. Crie scripts de teste para os casos de teste definidos nos exercícios anteriores:
 
+Links úteis da resolução dos exercícios de automação:
+
+[Login Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/e2e/login.spec.cy.js)
+<br/>
+[User Data](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/fixtures/userData.json)
+<br/>
+[Login Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/loginPage.js)
+<br/>
+[Home Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/homePage.js)
+
 **Automação do Caso de Teste: Login com sucesso.**
 
 ```javascript
-describe('Login com sucesso', () => {
-  it('Deve fazer login com um usuário válido', () => {
-    // Implemente os passos do caso de teste aqui
-  });
+//Suite de testes (cenario de teste)
+describe('SC-001: Login com sucesso', () => {
+    //caso de teste
+    it('TC-001: Deve fazer login com credenciais validas', () => {
+        //Acompanha a requisicao para fazer o login
+        cy.intercept('POST', '**/login').as('loginRequest');
+        //Acessa a pagina de login
+        cy.visit("http://localhost:3000/signin");
+        //Preenche o campo username com nome de usuario valido
+        cy.get('[data-test="signin-username"]').type('qa_teste');
+        //Preenche o campo password com senha correspondente valida
+        cy.get('[data-test="signin-password"]').type('1234');
+        //Clica no botão para fazer login
+        cy.get('[data-test="signin-submit"]').click();
+        //Espera a resposta do servidor
+        cy.wait('@loginRequest').then((interception) => {
+            //Garante que a requisicao ocorreu com sucesso
+            expect(interception.response.statusCode).to.equal(200);
+        });
+        //Verifica se o nome de usuario esta na pagina
+        cy.get('[data-test="sidenav-username"]').should('be.visible').and('contain', 'qa_teste');
+        //Verifica se tem a guia de transacao da tela Home
+        cy.get('[data-test="nav-transaction-tabs"]').should('be.visible');
+    });
 });
 ```
 
