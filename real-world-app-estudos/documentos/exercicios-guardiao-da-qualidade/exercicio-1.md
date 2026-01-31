@@ -73,6 +73,7 @@ describe('SC-001: Login com sucesso', () => {
     });
 });
 ```
+![Evidência: Automação Login com Sucesso](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/Automation-EvidenceLoginSuccess.gif)
 
 **Automação do Caso de Teste: Tentar fazer login com credenciais inválidas.**
 
