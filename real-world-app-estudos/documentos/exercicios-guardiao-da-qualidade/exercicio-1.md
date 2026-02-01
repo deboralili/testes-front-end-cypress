@@ -91,12 +91,41 @@ describe('Login', () => {
 **Automação do Caso de Teste: Tentar fazer login com credenciais inválidas.**
 
 ```javascript
-describe('Tentar fazer login com credenciais inválidas', () => {
-  it('Deve exibir uma mensagem de erro ao fazer login com credenciais inválidas', () => {
-    // Implemente os passos do caso de teste aqui
-  });
+//Suite de testes
+describe('Login', () => {
+
+    //Executa antes de cada it
+    beforeEach(() => {
+        //Acompanha a requisicao para fazer o login
+        cy.intercept('POST', '**/login').as('loginRequest');
+
+        //Acessa a pagina de login
+        loginPage.accessLoginPage();
+    });
+
+    //SC-002: O sistema deve exibir uma mensagem de erro ao tentar fazer login com credenciais inválidas.
+    context('Quando o usuario informa credenciais invalidas', () => {
+
+        //TC-002: Tentar fazer login com credenciais inválidas.
+        it('Deve exibir mensagem de erro', () => {
+
+            loginPage.loginWithUser(userData.userFail.username, userData.userFail.password);
+
+            //Verifica se o usuário nao foi autenticado
+            cy.wait('@loginRequest').then((interception) => {
+                expect(interception.response.statusCode).to.equal(401);
+            });
+
+            //Verifica se aparece mensagem de erro na tela
+            loginPage.checkWrongCredentialMessage();
+
+            //Verifica se o usuario permanece na pagina de login
+            loginPage.checkLoginPage();
+        });
+    });
 });
 ```
+![Evidência: Automação Falha de Login com Credenciais Invalidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/Automation-EvidenceLoginFail.gif)
 
 **Automação do Caso de Teste: Registro de novo usuário com sucesso.**
 
