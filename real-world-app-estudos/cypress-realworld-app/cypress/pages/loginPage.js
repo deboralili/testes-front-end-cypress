@@ -5,7 +5,8 @@ class LoginPage {
             usernameField: "[data-test='signin-username']",
             passwordField: "[data-test='signin-password']",
             signinButton: "[data-test='signin-submit']",
-            signinForm: ".SignInForm-form"
+            signinForm: ".SignInForm-form",
+            wrongCredentialAlert: "[data-test='signin-error']"
         }
         return selectors;
     }
@@ -29,6 +30,10 @@ class LoginPage {
 
         //Clica no botão para fazer login
         cy.get(this.selectorsList().signinButton).click();
+    }
+
+    checkWrongCredentialMessage() {
+        cy.get(this.selectorsList().wrongCredentialAlert).should('be.visible');
     }
 }
 

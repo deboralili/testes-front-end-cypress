@@ -2,5 +2,9 @@
     "userSuccess": {
         "username": "qa_teste",
         "password": "1234"
+    },
+    "userFail": {
+        "username": "test",
+        "password": "test"
     }
 }
