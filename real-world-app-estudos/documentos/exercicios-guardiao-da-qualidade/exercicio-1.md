@@ -50,29 +50,39 @@ Links úteis da resolução dos exercícios de automação:
 **Automação do Caso de Teste: Login com sucesso.**
 
 ```javascript
-//Suite de testes (cenario de teste)
-describe('SC-001: Login com sucesso', () => {
-    //caso de teste
-    it('TC-001: Deve fazer login com credenciais validas', () => {
+//Suite de testes
+describe('Login', () => {
+
+    //Executa antes de cada it
+    beforeEach(() => {
         //Acompanha a requisicao para fazer o login
         cy.intercept('POST', '**/login').as('loginRequest');
+
         //Acessa a pagina de login
-        cy.visit("http://localhost:3000/signin");
-        //Preenche o campo username com nome de usuario valido
-        cy.get('[data-test="signin-username"]').type('qa_teste');
-        //Preenche o campo password com senha correspondente valida
-        cy.get('[data-test="signin-password"]').type('1234');
-        //Clica no botão para fazer login
-        cy.get('[data-test="signin-submit"]').click();
-        //Espera a resposta do servidor
-        cy.wait('@loginRequest').then((interception) => {
-            //Garante que a requisicao ocorreu com sucesso
-            expect(interception.response.statusCode).to.equal(200);
+        loginPage.accessLoginPage();
+    });
+
+    //SC-001: O usuário deve conseguir realizar login ao informar credenciais válidas.
+    context('Quando o usuario informa credenciais validas', () => {
+
+        //TC-001: Efetuar login com credenciais válidas
+        it('Deve autenticar o usuario com sucesso', () => {
+
+            //Preeche formulario e clica no botao de signin
+            loginPage.loginWithUser(userData.userSuccess.username, userData.userSuccess.password);
+
+            //Espera a resposta do servidor
+            cy.wait('@loginRequest').then((interception) => {
+                //Garante que a requisicao ocorreu com sucesso
+                expect(interception.response.statusCode).to.equal(200);
+            });
+
+            //Verifica se o nome de usuario esta na pagina
+            homePage.checkUsernameLogged(userData.userSuccess.username);
+
+            //Verifica se tem a guia de transacao da tela Home
+            homePage.checkHomePage();
         });
-        //Verifica se o nome de usuario esta na pagina
-        cy.get('[data-test="sidenav-username"]').should('be.visible').and('contain', 'qa_teste');
-        //Verifica se tem a guia de transacao da tela Home
-        cy.get('[data-test="nav-transaction-tabs"]').should('be.visible');
     });
 });
 ```
