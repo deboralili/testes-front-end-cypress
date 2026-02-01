@@ -20,7 +20,10 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 [Link para o Caso de Teste TC-001](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/login/TC-001-Login-com-sucesso.md)
 
 **Caso de Teste:** Tentar fazer login com credenciais inválidas.<br/>
-**Descrição:** Garanta que o sistema exiba uma mensagem de erro ao tentar fazer login com credenciais inválidas (email ou senha incorretos).
+**Descrição:** Garanta que o sistema exiba uma mensagem de erro ao tentar fazer login com credenciais inválidas (email ou senha incorretos). <br/>
+[Link para o Cenário de Teste SC-002](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/login.md)
+<br/>
+[Link para o Caso de Teste TC-002](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/login/TC-002-Login-com-usuario-invalido.md)
 
 **Caso de Teste:** Registro de novo usuário com sucesso.<br/>
 **Descrição:** Verifique se é possível registrar um novo usuário com informações válidas.
