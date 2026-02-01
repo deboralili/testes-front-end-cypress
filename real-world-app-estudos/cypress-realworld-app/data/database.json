@@ -264,17 +264,6 @@
       "isDeleted": false,
       "createdAt": "2024-01-26T14:01:01.815Z",
       "modifiedAt": "2024-03-07T08:44:31.174Z"
-    },
-    {
-      "id": "aUb32iaWD",
-      "uuid": "12a58cbd-118e-439f-a18a-9169ed3a2e35",
-      "userId": "oI5IORRA-",
-      "bankName": "Banco Cypress",
-      "accountNumber": "bhjhgujgj",
-      "routingNumber": "001001001",
-      "isDeleted": false,
-      "createdAt": "2026-02-01T20:21:41.676Z",
-      "modifiedAt": "2026-02-01T20:21:41.676Z"
     }
   ],
   "transactions": [
