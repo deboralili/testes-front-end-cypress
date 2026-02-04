@@ -9,7 +9,8 @@ class SignUpPage {
             username: "[data-test='signup-username']",
             password: "[data-test='signup-password']",
             confirmPassword: "[data-test='signup-confirmPassword']",
-            signUpButton: "[data-test='signup-submit']"
+            signUpButton: "[data-test='signup-submit']",
+            signUpForm: ".SignUpForm-form"
         }
         return selectors
     }
@@ -24,6 +25,7 @@ class SignUpPage {
 
     checkSignUpPage() {
         cy.location('pathname').should('equal', '/signup')
+        cy.get(this.selectorsList().signUpForm).should('be.visible');
     }
 
     signUpWithAnyUser(firstName, lastName, username, password) {
