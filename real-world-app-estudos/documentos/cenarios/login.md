@@ -23,12 +23,4 @@
       O sistema deve exibir uma mensagem de erro ao tentar fazer login com credenciais inválidas.
     </td>
   </tr>
-  <tr>
-    <td>
-      SC-003
-    </td>
-    <td>
-      O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
-    </td>
-  </tr>
 </table>
