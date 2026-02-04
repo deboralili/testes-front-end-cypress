@@ -6,7 +6,8 @@ class LoginPage {
             passwordField: "[data-test='signin-password']",
             signinButton: "[data-test='signin-submit']",
             signinForm: ".SignInForm-form",
-            wrongCredentialAlert: "[data-test='signin-error']"
+            wrongCredentialAlert: "[data-test='signin-error']",
+            signUpLink: "[data-test='signup']"
         }
         return selectors;
     }

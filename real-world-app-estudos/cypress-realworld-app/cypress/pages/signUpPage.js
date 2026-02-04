@@ -3,7 +3,6 @@ import LoginPage from "./loginPage.js";
 class SignUpPage {
     selectorsList() {
         const selectors = {
-            signUpLink: "[data-test='signup']",
             firstName: "[data-test='signup-first-name']",
             lastName: "[data-test='signup-last-name']",
             username: "[data-test='signup-username']",
@@ -19,7 +18,8 @@ class SignUpPage {
         const loginPage = new LoginPage()
 
         loginPage.accessLoginPage()
-        cy.get(this.selectorsList().signUpLink).click()
+        cy.get(loginPage.selectorsList().signUpLink).click()
+
         this.checkSignUpPage()
     }
 
