@@ -87,26 +87,26 @@
       "modifiedAt": "2026-01-21T17:06:29.781Z"
     },
     {
-      "id": "165XU8ya4",
-      "uuid": "a9c44ff3-7716-4851-bd16-6ff9a013b0d3",
-      "firstName": "1",
-      "lastName": "2",
-      "username": "3",
-      "password": "$2a$10$Op/SzhQQyk.hYyYov7CU0.uurrtv3nvLNxO4IN6R4CgR/erJst30y",
+      "id": "Hz6LzOPyl",
+      "uuid": "2ff30549-ea2f-4b9d-8a3d-89244192e20b",
+      "firstName": "Elnora",
+      "lastName": "Baldini",
+      "username": "Orangutan",
+      "password": "$2a$10$dyh8URNFm4tSeT0Dw0ITPu/SZlMs4S8s14cYU85lI3ti17YHJnngq",
       "balance": 0,
-      "createdAt": "2026-02-04T17:48:16.016Z",
-      "modifiedAt": "2026-02-04T17:48:16.016Z"
+      "createdAt": "2026-02-05T16:31:51.446Z",
+      "modifiedAt": "2026-02-05T16:31:51.446Z"
     },
     {
-      "id": "Ha-ZRWeRY",
-      "uuid": "6f429c9d-2a3d-4ac0-a283-5c8c83388b49",
-      "firstName": "First",
-      "lastName": "Last",
-      "username": "User",
-      "password": "$2a$10$yUG2JThgrfRjCTn/KQul7.AXkiVvF9SYhLkRsdzhoWVxUBTJHgwPy",
+      "id": "mC-rBnPMA",
+      "uuid": "cb7c7822-fbf9-47ef-adc5-6050aad35dd5",
+      "firstName": "Adeline",
+      "lastName": "Pinna",
+      "username": "Tropical Two-Wing Flyfish",
+      "password": "$2a$10$pdF2H5di0wu3xG.u5EuDV.EVj9p4qdS3MxSNMa0GuX4SImrYa5hm6",
       "balance": 0,
-      "createdAt": "2026-02-04T19:25:35.540Z",
-      "modifiedAt": "2026-02-04T19:25:35.540Z"
+      "createdAt": "2026-02-07T15:53:30.716Z",
+      "modifiedAt": "2026-02-07T15:53:30.716Z"
     }
   ],
   "contacts": [
@@ -286,17 +286,6 @@
       "isDeleted": false,
       "createdAt": "2024-01-26T14:01:01.815Z",
       "modifiedAt": "2024-03-07T08:44:31.174Z"
-    },
-    {
-      "id": "r2Ef3-dPO",
-      "uuid": "eebf693b-142d-4408-8cf4-0b8280b68552",
-      "userId": "oI5IORRA-",
-      "bankName": "Banco Cypress",
-      "accountNumber": "bhjhgujgj",
-      "routingNumber": "001001001",
-      "isDeleted": false,
-      "createdAt": "2026-02-04T13:41:18.190Z",
-      "modifiedAt": "2026-02-04T13:41:18.190Z"
     }
   ],
   "transactions": [
