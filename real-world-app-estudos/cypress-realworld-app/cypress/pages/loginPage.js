@@ -22,12 +22,12 @@ class LoginPage {
         cy.get(this.selectorsList().signinForm).should('be.visible');
     }
 
-    loginWithUser(username, password) {
+    loginWithUser(user) {
         //Preenche o campo username com nome de usuario valido
-        cy.get(this.selectorsList().usernameField).type(username);
+        cy.get(this.selectorsList().usernameField).type(user.username);
 
         //Preenche o campo password com senha correspondente valida
-        cy.get(this.selectorsList().passwordField).type(password);
+        cy.get(this.selectorsList().passwordField).type(user.password);
 
         //Clica no botão para fazer login
         cy.get(this.selectorsList().signinButton).click();

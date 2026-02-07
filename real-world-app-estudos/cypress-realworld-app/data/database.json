@@ -107,6 +107,50 @@
       "balance": 0,
       "createdAt": "2026-02-07T15:53:30.716Z",
       "modifiedAt": "2026-02-07T15:53:30.716Z"
+    },
+    {
+      "id": "Jn2sGoeet",
+      "uuid": "8383b681-5e97-4d9c-9444-12a1199c447b",
+      "firstName": "Olga",
+      "lastName": "Cooke",
+      "username": "Crow",
+      "password": "$2a$10$iTkxNMLffybmqjcb2OLEvuq2OPm2d/YtQhtIxBlv5aKvSUl4Q7dbS",
+      "balance": 0,
+      "createdAt": "2026-02-07T15:57:22.397Z",
+      "modifiedAt": "2026-02-07T15:57:22.397Z"
+    },
+    {
+      "id": "PajdMRb9C",
+      "uuid": "7065719b-e387-45cd-b581-08646ca0847d",
+      "firstName": "Katie",
+      "lastName": "Magnani",
+      "username": "humedu",
+      "password": "$2a$10$B3E9/SyPwoYVgqxoUqeEEucpzxztJsQDrNGpH4nRnR8BNxu2cvPgW",
+      "balance": 0,
+      "createdAt": "2026-02-07T16:09:18.324Z",
+      "modifiedAt": "2026-02-07T16:09:18.324Z"
+    },
+    {
+      "id": "I8wUYUnCX",
+      "uuid": "2b533d31-d67c-4c69-a729-0bf906b34e82",
+      "firstName": "Jeff",
+      "lastName": "Hoxha",
+      "username": "oriko",
+      "password": "$2a$10$Rjcj9snyghjWNElHuCRTxuAmUtYhohgVjA.QMj2gLOAXA7PXRZx8e",
+      "balance": 0,
+      "createdAt": "2026-02-07T16:22:59.981Z",
+      "modifiedAt": "2026-02-07T16:22:59.981Z"
+    },
+    {
+      "id": "HR5QtVJql",
+      "uuid": "57c16dcc-1c10-4e95-b776-2f917c74823d",
+      "firstName": "Cole",
+      "lastName": "Pasquier",
+      "username": "tabipo",
+      "password": "$2a$10$tvDtwhRysOqO6.pz77KHoewBUZbrlpCiyTzFJxN01m4b502LcEI8a",
+      "balance": 0,
+      "createdAt": "2026-02-07T16:23:41.798Z",
+      "modifiedAt": "2026-02-07T16:23:41.798Z"
     }
   ],
   "contacts": [

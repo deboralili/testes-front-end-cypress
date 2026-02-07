@@ -28,12 +28,12 @@ class SignUpPage {
         cy.get(this.selectorsList().signUpForm).should('be.visible');
     }
 
-    signUpWithAnyUser(firstName, lastName, username, password) {
-        cy.get(this.selectorsList().firstName).type(firstName)
-        cy.get(this.selectorsList().lastName).type(lastName)
-        cy.get(this.selectorsList().username).type(username)
-        cy.get(this.selectorsList().password).type(password)
-        cy.get(this.selectorsList().confirmPassword).type(password)
+    signUpWithAnyUser(randomUser) {
+        cy.get(this.selectorsList().firstName).type(randomUser.firstName)
+        cy.get(this.selectorsList().lastName).type(randomUser.lastName)
+        cy.get(this.selectorsList().username).type(randomUser.username)
+        cy.get(this.selectorsList().password).type(randomUser.password)
+        cy.get(this.selectorsList().confirmPassword).type(randomUser.password)
         cy.get(this.selectorsList().signUpButton).click()
     }
 }
