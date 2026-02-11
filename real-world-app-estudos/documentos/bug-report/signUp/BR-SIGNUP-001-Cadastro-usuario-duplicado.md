@@ -87,3 +87,5 @@
     </td>
   </tr>
 </table>
+
+![Evidencia: Cadastro de Usuario duplicado](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/BR-SIGNUP-001-Cadastro-usuario-duplicado.gif)
