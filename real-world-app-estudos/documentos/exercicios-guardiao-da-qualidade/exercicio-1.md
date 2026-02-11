@@ -69,8 +69,7 @@ describe('Login', () => {
         it('Deve autenticar o usuario com sucesso', () => {
 
             //Preeche formulario e clica no botao de signin
-            loginPage.loginWithUser(userData.userSuccess.username, userData.userSuccess.password);
-
+            loginPage.loginWithUser(userData.userSuccess);
             //Espera a resposta do servidor
             cy.wait('@loginRequest').then((interception) => {
                 //Garante que a requisicao ocorreu com sucesso
@@ -109,7 +108,7 @@ describe('Login', () => {
         //TC-002: Tentar fazer login com credenciais inválidas.
         it('Deve exibir mensagem de erro', () => {
 
-            loginPage.loginWithUser(userData.userFail.username, userData.userFail.password);
+            loginPage.loginWithUser(userData.userFail);
 
             //Verifica se o usuário nao foi autenticado
             cy.wait('@loginRequest').then((interception) => {
