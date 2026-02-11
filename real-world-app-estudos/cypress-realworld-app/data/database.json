@@ -87,70 +87,26 @@
       "modifiedAt": "2026-01-21T17:06:29.781Z"
     },
     {
-      "id": "Hz6LzOPyl",
-      "uuid": "2ff30549-ea2f-4b9d-8a3d-89244192e20b",
-      "firstName": "Elnora",
-      "lastName": "Baldini",
-      "username": "Orangutan",
-      "password": "$2a$10$dyh8URNFm4tSeT0Dw0ITPu/SZlMs4S8s14cYU85lI3ti17YHJnngq",
+      "id": "YnbaTIyk7",
+      "uuid": "7cca4cf0-24f3-4eae-ab44-3073d469dde2",
+      "firstName": "Teste",
+      "lastName": "QA",
+      "username": "teste",
+      "password": "$2a$10$n3ZJoTmCiJYkk.wVUpJKyu5jVcGzW14BGKvUceha2RoDRt1uSbctq",
       "balance": 0,
-      "createdAt": "2026-02-05T16:31:51.446Z",
-      "modifiedAt": "2026-02-05T16:31:51.446Z"
+      "createdAt": "2026-02-07T23:51:43.259Z",
+      "modifiedAt": "2026-02-07T23:51:43.259Z"
     },
     {
-      "id": "mC-rBnPMA",
-      "uuid": "cb7c7822-fbf9-47ef-adc5-6050aad35dd5",
-      "firstName": "Adeline",
-      "lastName": "Pinna",
-      "username": "Tropical Two-Wing Flyfish",
-      "password": "$2a$10$pdF2H5di0wu3xG.u5EuDV.EVj9p4qdS3MxSNMa0GuX4SImrYa5hm6",
+      "id": "LFOSVFziI",
+      "uuid": "c6ae202e-f61b-40aa-ad45-7c537ba15103",
+      "firstName": "Martin",
+      "lastName": "Brady",
+      "username": "voczieto",
+      "password": "$2a$10$sC0KXQXWsG5EZyFhZnhHDuh2zD0pokJ5QdCKm4QN6LzIW0Uy6ayu6",
       "balance": 0,
-      "createdAt": "2026-02-07T15:53:30.716Z",
-      "modifiedAt": "2026-02-07T15:53:30.716Z"
-    },
-    {
-      "id": "Jn2sGoeet",
-      "uuid": "8383b681-5e97-4d9c-9444-12a1199c447b",
-      "firstName": "Olga",
-      "lastName": "Cooke",
-      "username": "Crow",
-      "password": "$2a$10$iTkxNMLffybmqjcb2OLEvuq2OPm2d/YtQhtIxBlv5aKvSUl4Q7dbS",
-      "balance": 0,
-      "createdAt": "2026-02-07T15:57:22.397Z",
-      "modifiedAt": "2026-02-07T15:57:22.397Z"
-    },
-    {
-      "id": "PajdMRb9C",
-      "uuid": "7065719b-e387-45cd-b581-08646ca0847d",
-      "firstName": "Katie",
-      "lastName": "Magnani",
-      "username": "humedu",
-      "password": "$2a$10$B3E9/SyPwoYVgqxoUqeEEucpzxztJsQDrNGpH4nRnR8BNxu2cvPgW",
-      "balance": 0,
-      "createdAt": "2026-02-07T16:09:18.324Z",
-      "modifiedAt": "2026-02-07T16:09:18.324Z"
-    },
-    {
-      "id": "I8wUYUnCX",
-      "uuid": "2b533d31-d67c-4c69-a729-0bf906b34e82",
-      "firstName": "Jeff",
-      "lastName": "Hoxha",
-      "username": "oriko",
-      "password": "$2a$10$Rjcj9snyghjWNElHuCRTxuAmUtYhohgVjA.QMj2gLOAXA7PXRZx8e",
-      "balance": 0,
-      "createdAt": "2026-02-07T16:22:59.981Z",
-      "modifiedAt": "2026-02-07T16:22:59.981Z"
-    },
-    {
-      "id": "HR5QtVJql",
-      "uuid": "57c16dcc-1c10-4e95-b776-2f917c74823d",
-      "firstName": "Cole",
-      "lastName": "Pasquier",
-      "username": "tabipo",
-      "password": "$2a$10$tvDtwhRysOqO6.pz77KHoewBUZbrlpCiyTzFJxN01m4b502LcEI8a",
-      "balance": 0,
-      "createdAt": "2026-02-07T16:23:41.798Z",
-      "modifiedAt": "2026-02-07T16:23:41.798Z"
+      "createdAt": "2026-02-07T23:53:58.607Z",
+      "modifiedAt": "2026-02-07T23:53:58.607Z"
     }
   ],
   "contacts": [
@@ -330,6 +286,28 @@
       "isDeleted": false,
       "createdAt": "2024-01-26T14:01:01.815Z",
       "modifiedAt": "2024-03-07T08:44:31.174Z"
+    },
+    {
+      "id": "gdErt34IZ",
+      "uuid": "5e77f97b-f28b-43ac-baae-f2decadbf0f7",
+      "userId": "oI5IORRA-",
+      "bankName": "Banco Cypress",
+      "accountNumber": "bhjhgujgj",
+      "routingNumber": "001001001",
+      "isDeleted": false,
+      "createdAt": "2026-02-07T23:50:55.896Z",
+      "modifiedAt": "2026-02-07T23:50:55.896Z"
+    },
+    {
+      "id": "yWYzjYx3E",
+      "uuid": "4a9ec814-223f-4bb3-a3fd-12abf1d95ace",
+      "userId": "YnbaTIyk7",
+      "bankName": "Banco Cypress",
+      "accountNumber": "bhjhgujgj",
+      "routingNumber": "001001001",
+      "isDeleted": false,
+      "createdAt": "2026-02-07T23:52:13.304Z",
+      "modifiedAt": "2026-02-07T23:52:13.304Z"
     }
   ],
   "transactions": [
