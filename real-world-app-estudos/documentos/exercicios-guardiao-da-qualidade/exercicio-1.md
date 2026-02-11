@@ -28,6 +28,10 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 **Caso de Teste:** Registro de novo usuário com sucesso.<br/>
 **Descrição:** Verifique se é possível registrar um novo usuário com informações válidas.
 
+[Link para o Cenário de Teste SC-003](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/signUpScenarios.md)
+<br/>
+[Link para o Caso de Teste TC-003](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/sign-up-test-cases/TC-003-Cadastro-de-usuario-com-sucesso.md)
+
 **Caso de Teste:** Tentar registrar um novo usuário com informações incompletas.<br/>
 **Descrição:** Garanta que o sistema exiba mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias.
 
@@ -41,11 +45,15 @@ Links úteis da resolução dos exercícios de automação:
 
 [Login Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/e2e/login.spec.cy.js)
 <br/>
+[SignUp Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/e2e/signUp.spec.cy.js)
+<br/>
 [User Data](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/fixtures/userData.json)
 <br/>
 [Login Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/loginPage.js)
 <br/>
 [Home Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/homePage.js)
+<br/>
+[SignUp Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/signUpPage.js)
 
 **Automação do Caso de Teste: Login com sucesso.**
 
@@ -129,12 +137,39 @@ describe('Login', () => {
 **Automação do Caso de Teste: Registro de novo usuário com sucesso.**
 
 ```javascript
-describe('Registro de novo usuário com sucesso', () => {
-  it('Deve registrar um novo usuário com informações válidas', () => {
-    // Implemente os passos do caso de teste aqui
+describe('Cadastro de Usuario', () => {
+
+  const randomUser = {
+    firstName: chance.first(),
+    lastName: chance.last(),
+    username: chance.word(),
+    password: chance.string({ length: 4 })
+  }
+
+  beforeEach(() => {
+    signUpPage.accessSignUpPage();
   });
-});
+
+  //SC-003: O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
+  context('Quando o usuario insere informacoes validas', () => {
+    //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
+    it('Deve efetuar o cadastro com sucesso', () => {
+
+      signUpPage.signUpWithAnyUser(randomUser);
+
+      loginPage.checkLoginPage();
+
+      loginPage.loginWithUser(randomUser);
+
+      homePage.checkHomePage();
+
+      homePage.checkUsernameLogged(randomUser.username);
+    });
+  });
+
+})
 ```
+![Evidência: Automação Cadastro de Usuário com informações válidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-EvidenceSignUpSuccess.gif)
 
 **Automação do Caso de Teste: Tentar registrar um novo usuário com informações incompletas.**
 
