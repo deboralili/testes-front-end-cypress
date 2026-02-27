@@ -24,7 +24,7 @@
       Título
     </th>
     <td colspan = 5>
-      Tentar fazer login com credenciais inválidas.
+      Login com credenciais inválidas.
     </td>
   </tr>
   <tr>
