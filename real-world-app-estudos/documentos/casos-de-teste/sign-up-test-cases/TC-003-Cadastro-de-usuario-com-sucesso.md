@@ -33,7 +33,7 @@
     </th>
     <td colspan = 5>
       Não deve existir usuário cadastrado com o mesmo username utilizado no teste. <br/>
-      Usuário deve estar na tela de cadastro.
+      Usuário deve estar na tela de cadastro de usuário.
     </td>
   </tr>
   <tr>
