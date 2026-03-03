@@ -35,6 +35,10 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 **Caso de Teste:** Tentar registrar um novo usuário com informações incompletas.<br/>
 **Descrição:** Garanta que o sistema exiba mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias.
 
+[Link para o Cenário de Teste SC-004](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/signUpScenarios.md)
+<br/>
+[Link para o Caso de Teste TC-004](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/sign-up-test-cases/TC-004-Cadastro-de-usuario-com-campo-first-name-vazio.md)
+
 ### Automação dos casos de teste
 
 **Exercício:** Automação dos Casos de Teste "Login" e "Registro de Usuário"
