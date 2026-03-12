@@ -42,6 +42,8 @@ As funcionalidades de "Login" e "Registro de Usuário" são fundamentais no apli
 [Link para o Caso de Teste TC-005](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/sign-up-test-cases/TC-005-Cadastro-de-usuario-com-campo-last-name-vazio.md)
 <br/>
 [Link para o Caso de Teste TC-006](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/sign-up-test-cases/TC-006-Cadastro-de-usuario-com-campo-username-vazio.md)
+<br/>
+[Link para o Caso de Teste TC-007](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/sign-up-test-cases/TC-007-Cadastro-de-usuario-com-campo-password-vazio.md)
 
 ### Automação dos casos de teste
 
