@@ -44,7 +44,7 @@
       Last Name: válido <br/>
       Username: válido <br/>
       Password: (vazio) <br/>
-      Confirm Password: igual ao Password				
+      Confirm Password: valor válido independente do campo Password.				
     </td>
   </tr>
   <tr>
