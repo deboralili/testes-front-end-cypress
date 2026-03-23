@@ -53,9 +53,8 @@
       Ações (passos)
     </th>
     <td colspan = 5>
-      1 - Acessar a tela de cadastro de usuário. <br/>	
-      2 - Preencher os campos First Name, Last Name, Username, Password e Confirm Password conforme os dados informados. <br/>
-      3 - Clicar no botão Sign Up. <br/>
+      1 - Preencher os campos First Name, Last Name, Username, Password e Confirm Password conforme os dados informados. <br/>
+      2 - Clicar no botão Sign Up.
     </td>
   </tr>
   <tr>

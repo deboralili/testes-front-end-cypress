@@ -52,9 +52,8 @@
       Ações (passos)
     </th>
     <td colspan = 5>
-      1 - Acessar a tela de cadastro de usuário. <br/>	
-      2 - Clicar no campo "Last Name" e sair do campo sem preenchê-lo. <br/>
-      3 - Preencher os campos "First Name", "Username", "Password" e "Confirm Password" conforme os dados informados. 
+      1 - Clicar no campo "Last Name" e sair do campo sem preenchê-lo. <br/>
+      2 - Preencher os campos "First Name", "Username", "Password" e "Confirm Password" conforme os dados informados. 
     </td>
   </tr>
   <tr>
