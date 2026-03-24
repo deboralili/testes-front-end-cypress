@@ -28,12 +28,65 @@ class SignUpPage {
         cy.get(this.selectorsList().signUpForm).should('be.visible');
     }
 
-    signUpWithAnyUser(randomUser) {
-        cy.get(this.selectorsList().firstName).type(randomUser.firstName)
-        cy.get(this.selectorsList().lastName).type(randomUser.lastName)
-        cy.get(this.selectorsList().username).type(randomUser.username)
-        cy.get(this.selectorsList().password).type(randomUser.password)
-        cy.get(this.selectorsList().confirmPassword).type(randomUser.password)
+    fillFirstNameField(firstName) {
+        const firstNameField = cy.get(this.selectorsList().firstName);
+
+        if (firstName === "" || firstName === undefined) {
+            firstNameField.focus().blur();
+        } else {
+            firstNameField.type(firstName);
+        }
+    }
+
+    fillLastNameField(lastName) {
+        const lastNameField = cy.get(this.selectorsList().lastName);
+
+        if (lastName === "" || lastName === undefined) {
+            lastNameField.focus().blur();
+        } else {
+            lastNameField.type(lastName);
+        }
+    }
+
+    fillUsernameField(username) {
+        const usernameField = cy.get(this.selectorsList().username);
+
+        if (username === "" || username === undefined) {
+            usernameField.focus().blur();
+        } else {
+            usernameField.type(username);
+        }
+    }
+
+    fillPasswordField(password) {
+        const passwordField = cy.get(this.selectorsList().password);
+
+        if (password === "" || password === undefined) {
+            passwordField.focus().blur();
+        } else {
+            passwordField.type(password);
+        }
+    }
+
+    fillConfirmPasswordField(confirmPassword) {
+        const confirmPasswordField = cy.get(this.selectorsList().confirmPassword);
+
+        if (confirmPassword === "" || confirmPassword === undefined) {
+            confirmPasswordField.focus().blur();
+        } else {
+            confirmPasswordField.type(confirmPassword);
+        }
+    }
+
+    fillSignUpForm(randomUser) {
+        this.fillFirstNameField(randomUser.firstName)
+        this.fillLastNameField(randomUser.lastName)
+        this.fillUsernameField(randomUser.username)
+        this.fillPasswordField(randomUser.password)
+        this.fillConfirmPasswordField(randomUser.confirmPassword)
+    }
+
+    clickSignUpButton() {
         cy.get(this.selectorsList().signUpButton).click()
     }
 }

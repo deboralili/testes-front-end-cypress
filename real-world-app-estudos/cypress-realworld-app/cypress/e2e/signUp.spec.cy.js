@@ -32,7 +32,9 @@ describe('Cadastro de Usuario', () => {
     //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
     it('Deve efetuar o cadastro com sucesso', () => {
 
-      signUpPage.signUpWithAnyUser(randomUser);
+      signUpPage.fillSignUpForm(randomUser);
+
+      signUpPage.clickSignUpButton();
 
       loginPage.checkLoginPage();
 

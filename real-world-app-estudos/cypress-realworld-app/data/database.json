@@ -85,6 +85,50 @@
       "balance": 0,
       "createdAt": "2026-01-21T17:06:29.781Z",
       "modifiedAt": "2026-01-21T17:06:29.781Z"
+    },
+    {
+      "id": "Xhjpwoa8E",
+      "uuid": "a1f439c6-4bfb-41b2-8a67-8a40fe194379",
+      "firstName": "Dorothy",
+      "lastName": "Collier",
+      "username": "ticcem",
+      "password": "$2a$10$0cRgLKkgtrQ6jmYB6jbqYutHRj647nbxXoJlFpr.0rCMIoUwgpbtm",
+      "balance": 0,
+      "createdAt": "2026-03-24T18:03:42.072Z",
+      "modifiedAt": "2026-03-24T18:03:42.072Z"
+    },
+    {
+      "id": "1Vh30UAU9",
+      "uuid": "2faceaa1-de20-4c5d-bb85-5a839f44db08",
+      "firstName": "Derek",
+      "lastName": "Tanaka",
+      "username": "vuseoci",
+      "password": "$2a$10$UFVnd.55xaxZ6qck2hVg8enF3bNomQhvqBio728tPUOHdJuBUpvP2",
+      "balance": 0,
+      "createdAt": "2026-03-24T19:55:59.062Z",
+      "modifiedAt": "2026-03-24T19:55:59.062Z"
+    },
+    {
+      "id": "Cr6bDw_74",
+      "uuid": "f01050b4-ab43-4144-a5b2-a2e915adb784",
+      "firstName": "Harry",
+      "lastName": "Chandler",
+      "username": "bap",
+      "password": "$2a$10$/duOGFS1tyRcsOp/xe8apeUAQZPQ6pIkkMfsAjrhEZ8167eDVwvwy",
+      "balance": 0,
+      "createdAt": "2026-03-24T20:04:49.689Z",
+      "modifiedAt": "2026-03-24T20:04:49.689Z"
+    },
+    {
+      "id": "6kI9SUIZW",
+      "uuid": "5d1764cf-a84e-48e1-81a0-4e5b625a7606",
+      "firstName": "Alta",
+      "lastName": "Tamura",
+      "username": "lemhef",
+      "password": "$2a$10$sh7C79WMNtRnCb4p8hFPX.4WGW9JmbQqzfISG6NZMQ6uU6pTEmE7S",
+      "balance": 0,
+      "createdAt": "2026-03-24T20:07:15.168Z",
+      "modifiedAt": "2026-03-24T20:07:15.168Z"
     }
   ],
   "contacts": [
