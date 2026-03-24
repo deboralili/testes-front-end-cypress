@@ -11,14 +11,19 @@ const homePage = new HomePage();
 
 describe('Cadastro de Usuario', () => {
 
-  const randomUser = {
-    firstName: chance.first(),
-    lastName: chance.last(),
-    username: chance.word(),
-    password: chance.string({ length: 4 })
-  }
+  let randomUser;
 
   beforeEach(() => {
+    const password = chance.string({ length: 4 });
+
+    randomUser = {
+      firstName: chance.first(),
+      lastName: chance.last(),
+      username: chance.word(),
+      password: password,
+      confirmPassword: password
+    }
+
     signUpPage.accessSignUpPage();
   });
 
