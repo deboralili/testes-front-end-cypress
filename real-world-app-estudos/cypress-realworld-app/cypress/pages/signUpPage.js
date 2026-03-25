@@ -3,11 +3,11 @@ import LoginPage from "./loginPage.js";
 class SignUpPage {
     selectorsList() {
         const selectors = {
-            firstName: "[data-test='signup-first-name']",
-            lastName: "[data-test='signup-last-name']",
-            username: "[data-test='signup-username']",
-            password: "[data-test='signup-password']",
-            confirmPassword: "[data-test='signup-confirmPassword']",
+            firstNameInput: "[data-test='signup-first-name'] input",
+            lastNameInput: "[data-test='signup-last-name'] input",
+            usernameInput: "[data-test='signup-username'] input",
+            passwordInput: "[data-test='signup-password'] input",
+            confirmPasswordInput: "[data-test='signup-confirmPassword'] input",
             signUpButton: "[data-test='signup-submit']",
             signUpForm: ".SignUpForm-form"
         }
@@ -29,7 +29,7 @@ class SignUpPage {
     }
 
     fillFirstNameField(firstName) {
-        const firstNameField = cy.get(this.selectorsList().firstName);
+        const firstNameField = cy.get(this.selectorsList().firstNameInput);
 
         if (firstName === "" || firstName === undefined) {
             firstNameField.focus().blur();
@@ -39,7 +39,7 @@ class SignUpPage {
     }
 
     fillLastNameField(lastName) {
-        const lastNameField = cy.get(this.selectorsList().lastName);
+        const lastNameField = cy.get(this.selectorsList().lastNameInput);
 
         if (lastName === "" || lastName === undefined) {
             lastNameField.focus().blur();
@@ -49,7 +49,7 @@ class SignUpPage {
     }
 
     fillUsernameField(username) {
-        const usernameField = cy.get(this.selectorsList().username);
+        const usernameField = cy.get(this.selectorsList().usernameInput);
 
         if (username === "" || username === undefined) {
             usernameField.focus().blur();
@@ -59,7 +59,7 @@ class SignUpPage {
     }
 
     fillPasswordField(password) {
-        const passwordField = cy.get(this.selectorsList().password);
+        const passwordField = cy.get(this.selectorsList().passwordInput);
 
         if (password === "" || password === undefined) {
             passwordField.focus().blur();
@@ -69,7 +69,7 @@ class SignUpPage {
     }
 
     fillConfirmPasswordField(confirmPassword) {
-        const confirmPasswordField = cy.get(this.selectorsList().confirmPassword);
+        const confirmPasswordField = cy.get(this.selectorsList().confirmPasswordInput);
 
         if (confirmPassword === "" || confirmPassword === undefined) {
             confirmPasswordField.focus().blur();
