@@ -50,7 +50,7 @@ describe('Cadastro de Usuario', () => {
   // cadastrar um novo usuário sem preencher todos os campos obrigatórios.
   context('Validacao de Campos Obrigatorios', () => {
     //TC-004: Cadastro de usuário com campo "First Name" vazio.
-    it.only('Cadastro de Usuario com campo "First Name" vazio', () => {
+    it('Cadastro de Usuario com campo "First Name" vazio', () => {
 
       const userWithEmptyFirstName = {
         ...randomUser, firstName: ""
@@ -66,6 +66,21 @@ describe('Cadastro de Usuario', () => {
       signUpPage.checkSignUpButtonIsDisabled();
     });
 
+    //TC-005: Cadastro de usuário com campo "Last Name" vazio.
+    it.only('Cadastro de Usuario com campo "Last Name" vazio', () => {
+      const userWithEmptyLastName = {
+        ...randomUser, lastName: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyLastName);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().lastNameErrorMessage,
+        "Last Name is required"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+    });
   });
 
 })
