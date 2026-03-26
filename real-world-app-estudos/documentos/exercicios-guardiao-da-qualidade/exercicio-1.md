@@ -190,11 +190,43 @@ describe('Cadastro de Usuario', () => {
 **Automação do Caso de Teste: Tentar registrar um novo usuário com informações incompletas.**
 
 ```javascript
-describe('Tentar registrar um novo usuário com informações incompletas', () => {
-  it('Deve exibir mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias', () => {
-    // Implemente os passos do caso de teste aqui
+describe('Cadastro de Usuario', () => {
+  let randomUser;
+  beforeEach(() => {
+    const password = chance.string({ length: 4 });
+    randomUser = {
+      firstName: chance.first(),
+      lastName: chance.last(),
+      username: chance.word(),
+      password: password,
+      confirmPassword: password
+    }
+    signUpPage.accessSignUpPage();
   });
-});
+
+  //SC-004: O sistema deve impedir o cadastro e exibir mensagem de erro ao tentar 
+  // cadastrar um novo usuário sem preencher todos os campos obrigatórios.
+  context('Validacao de Campos Obrigatorios', () => {
+    //TC-004: Cadastro de usuário com campo "First Name" vazio.
+    it.only('Cadastro de Usuario com campo "First Name" vazio', () => {
+
+      const userWithEmptyFirstName = {
+        ...randomUser, firstName: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyFirstName);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().firstNameErrorMessage,
+        "First Name is required"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+    });
+
+  });
+
+})
 ```
 
 Continue praticando e explorando outras funcionalidades do Cypress.io para criar casos de teste e automações abrangentes para todas as features do Real World App. O objetivo é se tornar um Guardião da Qualidade altamente capacitado, capaz de testar de forma eficaz e garantir a qualidade do aplicativo em todos os aspectos. 
