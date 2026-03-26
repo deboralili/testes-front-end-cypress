@@ -228,6 +228,7 @@ describe('Cadastro de Usuario', () => {
 
 })
 ```
+![Evidência: Automação Cadastro de Usuário com campo Fist Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutFirstName.gif)
 
 Continue praticando e explorando outras funcionalidades do Cypress.io para criar casos de teste e automações abrangentes para todas as features do Real World App. O objetivo é se tornar um Guardião da Qualidade altamente capacitado, capaz de testar de forma eficaz e garantir a qualidade do aplicativo em todos os aspectos. 
 Boa sorte! #GuardiaoDaQualidade #AutomacaoDeTestes #CypressIO #RealWorldApp
