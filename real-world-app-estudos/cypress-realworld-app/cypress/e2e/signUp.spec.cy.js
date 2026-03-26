@@ -46,4 +46,26 @@ describe('Cadastro de Usuario', () => {
     });
   });
 
+  //SC-004: O sistema deve impedir o cadastro e exibir mensagem de erro ao tentar 
+  // cadastrar um novo usuário sem preencher todos os campos obrigatórios.
+  context('Validacao de Campos Obrigatorios', () => {
+    //TC-004: Cadastro de usuário com campo "First Name" vazio.
+    it.only('Cadastro de Usuario com campo "First Name" vazio', () => {
+
+      const userWithEmptyFirstName = {
+        ...randomUser, firstName: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyFirstName);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().firstNameErrorMessage,
+        "First Name is required"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+    });
+
+  });
+
 })
