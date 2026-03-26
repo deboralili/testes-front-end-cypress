@@ -106,6 +106,10 @@ class SignUpPage {
     checkFieldErrorMessage(errorSelector, expectedMessage) {
         cy.get(errorSelector).should('be.visible').and('contain', expectedMessage);
     }
+
+    checkSignUpButtonIsDisabled() {
+        cy.get(this.selectorsList().signUpButton).should('be.disabled');
+    }
 }
 
 export default SignUpPage
