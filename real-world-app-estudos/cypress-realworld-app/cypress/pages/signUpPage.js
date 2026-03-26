@@ -3,12 +3,25 @@ import LoginPage from "./loginPage.js";
 class SignUpPage {
     selectorsList() {
         const selectors = {
+
+            //Alert Messages
+            firstNameErrorMessage: "[data-test='signup-first-name'] .MuiFormHelperText-root",
+            lastNameErrorMessage: "[data-test='signup-last-name'] .MuiFormHelperText-root",
+            usernameErrorMessage: "[data-test='signup-username'] .MuiFormHelperText-root",
+            passwordErrorMessage: "[data-test='signup-password'] .MuiFormHelperText-root",
+            confirmPasswordErrorMessage: "[data-test='signup-confirmPassword'] .MuiFormHelperText-root",
+
+            //Inputs
             firstNameInput: "[data-test='signup-first-name'] input",
             lastNameInput: "[data-test='signup-last-name'] input",
             usernameInput: "[data-test='signup-username'] input",
             passwordInput: "[data-test='signup-password'] input",
             confirmPasswordInput: "[data-test='signup-confirmPassword'] input",
+
+            //Button
             signUpButton: "[data-test='signup-submit']",
+
+            //Form
             signUpForm: ".SignUpForm-form"
         }
         return selectors
@@ -88,6 +101,10 @@ class SignUpPage {
 
     clickSignUpButton() {
         cy.get(this.selectorsList().signUpButton).click()
+    }
+
+    checkFieldErrorMessage(errorSelector, expectedMessage) {
+        cy.get(errorSelector).should('be.visible').and('contain', expectedMessage);
     }
 }
 
