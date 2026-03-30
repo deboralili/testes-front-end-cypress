@@ -67,7 +67,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-005: Cadastro de usuário com campo "Last Name" vazio.
-    it.only('Cadastro de Usuario com campo "Last Name" vazio', () => {
+    it('Cadastro de Usuario com campo "Last Name" vazio', () => {
       const userWithEmptyLastName = {
         ...randomUser, lastName: ""
       };
@@ -77,6 +77,23 @@ describe('Cadastro de Usuario', () => {
       signUpPage.checkFieldErrorMessage(
         signUpPage.selectorsList().lastNameErrorMessage,
         "Last Name is required"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+    });
+
+    //TC-006: Cadastro de usuário com campo "Username" vazio.
+    it('Cadastro de Usuario com campo "Username" vazio', () => {
+
+      const userWithEmptyUsername = {
+        ...randomUser, username: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyUsername);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().usernameErrorMessage,
+        "Username is required"
       );
 
       signUpPage.checkSignUpButtonIsDisabled();
