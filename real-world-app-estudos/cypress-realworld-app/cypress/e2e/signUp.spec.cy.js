@@ -117,6 +117,23 @@ describe('Cadastro de Usuario', () => {
 
     });
 
+    //TC-008: Cadastro de usuário com campo "Confirm Password" vazio.
+    it('Cadastro de Usuario com campo "Confirm Password" vazio', () => {
+
+      const userWithEmptyConfirmPassword = {
+        ...randomUser, confirmPassword: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyConfirmPassword);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().confirmPasswordErrorMessage,
+        "Confirm your password"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+
+    });
   });
 
 })
