@@ -208,7 +208,7 @@ describe('Cadastro de Usuario', () => {
   // cadastrar um novo usuário sem preencher todos os campos obrigatórios.
   context('Validacao de Campos Obrigatorios', () => {
     //TC-004: Cadastro de usuário com campo "First Name" vazio.
-    it.only('Cadastro de Usuario com campo "First Name" vazio', () => {
+    it('Cadastro de Usuario com campo "First Name" vazio', () => {
 
       const userWithEmptyFirstName = {
         ...randomUser, firstName: ""
@@ -224,11 +224,29 @@ describe('Cadastro de Usuario', () => {
       signUpPage.checkSignUpButtonIsDisabled();
     });
 
+    //TC-005: Cadastro de usuário com campo "Last Name" vazio.
+    it('Cadastro de Usuario com campo "Last Name" vazio', () => {
+      const userWithEmptyLastName = {
+        ...randomUser, lastName: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyLastName);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().lastNameErrorMessage,
+        "Last Name is required"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+    });
+
   });
 
 })
 ```
 ![Evidência: Automação Cadastro de Usuário com campo Fist Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutFirstName.gif)
+
+![Evidência: Automação Cadastro de Usuário com campo Last Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutLastName.gif)
 
 Continue praticando e explorando outras funcionalidades do Cypress.io para criar casos de teste e automações abrangentes para todas as features do Real World App. O objetivo é se tornar um Guardião da Qualidade altamente capacitado, capaz de testar de forma eficaz e garantir a qualidade do aplicativo em todos os aspectos. 
 Boa sorte! #GuardiaoDaQualidade #AutomacaoDeTestes #CypressIO #RealWorldApp
