@@ -98,6 +98,25 @@ describe('Cadastro de Usuario', () => {
 
       signUpPage.checkSignUpButtonIsDisabled();
     });
+
+    //TC-007: Cadastro de usuário com campo "Password" vazio.
+    it('Cadastro de Usuario com campo "Password" vazio', () => {
+
+      const userWithEmptyPassword = {
+        ...randomUser, password: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyPassword);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().passwordErrorMessage,
+        "Enter your password"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+
+    });
+
   });
 
 })
