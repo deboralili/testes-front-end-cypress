@@ -109,7 +109,7 @@ describe('Login', () => {
     });
 });
 ```
-![Evidência: Automação Login com Sucesso](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/Automation-EvidenceLoginSuccess.gif)
+![Evidência: Automação Login com Sucesso](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/teste-automatizado/Automation-EvidenceLoginSuccess.gif)
 
 **Automação do Caso de Teste: Tentar fazer login com credenciais inválidas.**
 
@@ -148,7 +148,7 @@ describe('Login', () => {
     });
 });
 ```
-![Evidência: Automação Falha de Login com Credenciais Invalidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/Automation-EvidenceLoginFail.gif)
+![Evidência: Automação Falha de Login com Credenciais Invalidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/teste-automatizado/Automation-EvidenceLoginFail.gif)
 
 **Automação do Caso de Teste: Registro de novo usuário com sucesso.**
 
@@ -185,7 +185,7 @@ describe('Cadastro de Usuario', () => {
 
 })
 ```
-![Evidência: Automação Cadastro de Usuário com informações válidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-EvidenceSignUpSuccess.gif)
+![Evidência: Automação Cadastro de Usuário com informações válidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-EvidenceSignUpSuccess.gif)
 
 **Automação do Caso de Teste: Tentar registrar um novo usuário com informações incompletas.**
 
@@ -279,13 +279,13 @@ describe('Cadastro de Usuario', () => {
 
 })
 ```
-![Evidência: Automação Cadastro de Usuário com campo Fist Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutFirstName.gif)
+![Evidência: Automação Cadastro de Usuário com campo Fist Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutFirstName.gif)
 
-![Evidência: Automação Cadastro de Usuário com campo Last Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutLastName.gif)
+![Evidência: Automação Cadastro de Usuário com campo Last Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutLastName.gif)
 
-![Evidência: Automação Cadastro de Usuário com campo Username vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutUsername.gif)
+![Evidência: Automação Cadastro de Usuário com campo Username vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutUsername.gif)
 
-![Evidência: Automação Cadastro de Usuário com campo Password vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/Automation-UserRegistrationWithoutPassword.gif)
+![Evidência: Automação Cadastro de Usuário com campo Password vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutPassword.gif)
 
 Continue praticando e explorando outras funcionalidades do Cypress.io para criar casos de teste e automações abrangentes para todas as features do Real World App. O objetivo é se tornar um Guardião da Qualidade altamente capacitado, capaz de testar de forma eficaz e garantir a qualidade do aplicativo em todos os aspectos. 
 Boa sorte! #GuardiaoDaQualidade #AutomacaoDeTestes #CypressIO #RealWorldApp
