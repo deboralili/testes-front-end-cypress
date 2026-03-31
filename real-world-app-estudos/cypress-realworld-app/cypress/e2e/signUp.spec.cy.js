@@ -134,6 +134,44 @@ describe('Cadastro de Usuario', () => {
       signUpPage.checkSignUpButtonIsDisabled();
 
     });
+
+    //TC-009: Cadastro de usuário com todos os campos vazios.
+    it('Cadastro de Usuario com todos os campos vazios', () => {
+
+      const userWithEmptyFields = {
+        ...randomUser, firstName: "", lastName: "", username: "", password: "", confirmPassword: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyFields);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().firstNameErrorMessage,
+        "First Name is required"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().lastNameErrorMessage,
+        "Last Name is required"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().usernameErrorMessage,
+        "Username is required"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().passwordErrorMessage,
+        "Enter your password"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().confirmPasswordErrorMessage,
+        "Confirm your password"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+
+    });
   });
 
 })
