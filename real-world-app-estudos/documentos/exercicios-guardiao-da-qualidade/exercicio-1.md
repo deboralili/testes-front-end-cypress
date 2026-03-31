@@ -293,6 +293,43 @@ describe('Cadastro de Usuario', () => {
 
     });
 
+    //TC-009: Cadastro de usuário com todos os campos vazios.
+    it('Cadastro de Usuario com todos os campos vazios', () => {
+
+      const userWithEmptyFields = {
+        ...randomUser, firstName: "", lastName: "", username: "", password: "", confirmPassword: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyFields);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().firstNameErrorMessage,
+        "First Name is required"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().lastNameErrorMessage,
+        "Last Name is required"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().usernameErrorMessage,
+        "Username is required"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().passwordErrorMessage,
+        "Enter your password"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().confirmPasswordErrorMessage,
+        "Confirm your password"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+
+    });
   });
 
 })
@@ -306,6 +343,8 @@ describe('Cadastro de Usuario', () => {
 ![Evidência: Automação Cadastro de Usuário com campo Password vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutPassword.gif)
 
 ![Evidência: Automação Cadastro de Usuário com campo Confirm Password vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutConfirmPassword.gif)
+
+![Evidência: Automação Cadastro de Usuário com todos os campos vazios](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithAllFieldsEmpty.gif)
 
 Continue praticando e explorando outras funcionalidades do Cypress.io para criar casos de teste e automações abrangentes para todas as features do Real World App. O objetivo é se tornar um Guardião da Qualidade altamente capacitado, capaz de testar de forma eficaz e garantir a qualidade do aplicativo em todos os aspectos. 
 Boa sorte! #GuardiaoDaQualidade #AutomacaoDeTestes #CypressIO #RealWorldApp
