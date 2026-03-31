@@ -172,6 +172,29 @@ describe('Cadastro de Usuario', () => {
       signUpPage.checkSignUpButtonIsDisabled();
 
     });
+
+    //TC-010: Cadastro de usuário com os campos "Password" e "Confirm Password" vazios.
+    it.only('Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
+
+      const userWithEmptyPasswordAndConfirmPassword = {
+        ...randomUser, password: "", confirmPassword: ""
+      };
+
+      signUpPage.fillSignUpForm(userWithEmptyPasswordAndConfirmPassword);
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().passwordErrorMessage,
+        "Enter your password"
+      );
+
+      signUpPage.checkFieldErrorMessage(
+        signUpPage.selectorsList().confirmPasswordErrorMessage,
+        "Confirm your password"
+      );
+
+      signUpPage.checkSignUpButtonIsDisabled();
+
+    });
   });
 
 })
