@@ -30,7 +30,10 @@ describe('Cadastro de Usuario', () => {
   //SC-003: O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
   context('Cadastro com Informacoes Validas', () => {
     //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
-    it('TC-003 - Cadastro realizado com sucesso', () => {
+    it.only('TC-003 - Cadastro realizado com sucesso', () => {
+
+      cy.intercept('POST', '**/users').as('postUser');
+      cy.intercept('POST', '**/login').as('postLogin');
 
       signUpPage.fillSignUpForm(randomUser);
 
@@ -38,9 +41,13 @@ describe('Cadastro de Usuario', () => {
 
       signUpPage.clickSignUpButton();
 
+      cy.wait('@postUser').its('response.statusCode').should('eq', 201);
+
       loginPage.checkLoginPage();
 
       loginPage.loginWithUser(randomUser);
+
+      cy.wait('@postLogin').its('response.statusCode').should('eq', 200);
 
       homePage.checkHomePage();
 
