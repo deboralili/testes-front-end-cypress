@@ -30,7 +30,7 @@ describe('Cadastro de Usuario', () => {
   //SC-003: O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
   context('Cadastro com Informacoes Validas', () => {
     //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
-    it('Cadastro realizado com sucesso', () => {
+    it('TC-003 - Cadastro realizado com sucesso', () => {
 
       signUpPage.fillSignUpForm(randomUser);
 
@@ -52,7 +52,7 @@ describe('Cadastro de Usuario', () => {
   // cadastrar um novo usuário sem preencher todos os campos obrigatórios.
   context('Validacao de Campos Obrigatorios', () => {
     //TC-004: Cadastro de usuário com campo "First Name" vazio.
-    it('Cadastro de Usuario com campo "First Name" vazio', () => {
+    it('TC-004 - Cadastro de Usuario com campo "First Name" vazio', () => {
 
       const userWithEmptyFirstName = {
         ...randomUser, firstName: ""
@@ -69,7 +69,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-005: Cadastro de usuário com campo "Last Name" vazio.
-    it('Cadastro de Usuario com campo "Last Name" vazio', () => {
+    it('TC-005 - Cadastro de Usuario com campo "Last Name" vazio', () => {
       const userWithEmptyLastName = {
         ...randomUser, lastName: ""
       };
@@ -85,7 +85,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-006: Cadastro de usuário com campo "Username" vazio.
-    it('Cadastro de Usuario com campo "Username" vazio', () => {
+    it('TC-006 - Cadastro de Usuario com campo "Username" vazio', () => {
 
       const userWithEmptyUsername = {
         ...randomUser, username: ""
@@ -102,7 +102,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-007: Cadastro de usuário com campo "Password" vazio.
-    it('Cadastro de Usuario com campo "Password" vazio', () => {
+    it('TC-007 - Cadastro de Usuario com campo "Password" vazio', () => {
 
       const userWithEmptyPassword = {
         ...randomUser, password: ""
@@ -120,7 +120,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-008: Cadastro de usuário com campo "Confirm Password" vazio.
-    it('Cadastro de Usuario com campo "Confirm Password" vazio', () => {
+    it('TC-008 - Cadastro de Usuario com campo "Confirm Password" vazio', () => {
 
       const userWithEmptyConfirmPassword = {
         ...randomUser, confirmPassword: ""
@@ -138,7 +138,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-009: Cadastro de usuário com todos os campos vazios.
-    it('Cadastro de Usuario com todos os campos vazios', () => {
+    it('TC-009 - Cadastro de Usuario com todos os campos vazios', () => {
 
       const userWithEmptyFields = {
         ...randomUser, firstName: "", lastName: "", username: "", password: "", confirmPassword: ""
@@ -176,7 +176,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-010: Cadastro de usuário com os campos "Password" e "Confirm Password" vazios.
-    it('Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
+    it('TC-010 - Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
 
       const userWithEmptyPasswordAndConfirmPassword = {
         ...randomUser, password: "", confirmPassword: ""
