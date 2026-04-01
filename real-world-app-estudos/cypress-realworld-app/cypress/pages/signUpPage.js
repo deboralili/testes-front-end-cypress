@@ -110,6 +110,10 @@ class SignUpPage {
     checkSignUpButtonIsDisabled() {
         cy.get(this.selectorsList().signUpButton).should('be.disabled');
     }
+
+    checkSignUpButtonEnabled() {
+        cy.get(this.selectorsList().signUpButton).should('be.enabled');
+    }
 }
 
 export default SignUpPage

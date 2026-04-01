@@ -34,6 +34,8 @@ describe('Cadastro de Usuario', () => {
 
       signUpPage.fillSignUpForm(randomUser);
 
+      signUpPage.checkSignUpButtonEnabled();
+
       signUpPage.clickSignUpButton();
 
       loginPage.checkLoginPage();
