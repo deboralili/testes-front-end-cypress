@@ -28,9 +28,9 @@ describe('Cadastro de Usuario', () => {
   });
 
   //SC-003: O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
-  context('Quando o usuario insere informacoes validas', () => {
+  context('Cadastro com Informacoes Validas', () => {
     //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
-    it('Deve efetuar o cadastro com sucesso', () => {
+    it('Cadastro realizado com sucesso', () => {
 
       signUpPage.fillSignUpForm(randomUser);
 
@@ -174,7 +174,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-010: Cadastro de usuário com os campos "Password" e "Confirm Password" vazios.
-    it.only('Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
+    it('Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
 
       const userWithEmptyPasswordAndConfirmPassword = {
         ...randomUser, password: "", confirmPassword: ""
