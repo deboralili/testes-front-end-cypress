@@ -18,10 +18,10 @@ describe('Login', () => {
     });
 
     //SC-001: O usuário deve conseguir realizar login ao informar credenciais válidas.
-    context('Quando o usuario informa credenciais validas', () => {
+    context('Autenticacao com Credenciais Validas', () => {
 
         //TC-001: Efetuar login com credenciais válidas
-        it('Deve autenticar o usuario com sucesso', () => {
+        it('TC-001 - Login realizado com sucesso', () => {
 
             //Preeche formulario e clica no botao de signin
             loginPage.loginWithUser(userData.userSuccess);
@@ -41,10 +41,10 @@ describe('Login', () => {
     });
 
     //SC-002: O sistema deve exibir uma mensagem de erro ao tentar fazer login com credenciais inválidas.
-    context('Quando o usuario informa credenciais invalidas', () => {
+    context('Tentativa de Autenticacao com Dados Invalidos', () => {
 
         //TC-002: Tentar fazer login com credenciais inválidas.
-        it('Deve exibir mensagem de erro', () => {
+        it('TC-002 - Erro de autenticacao com credenciais incorretas', () => {
 
             loginPage.loginWithUser(userData.userFail);
 
