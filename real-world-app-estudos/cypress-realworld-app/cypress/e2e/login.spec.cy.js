@@ -24,7 +24,9 @@ describe('Login', () => {
         it('TC-001 - Login realizado com sucesso', () => {
 
             //Preeche formulario e clica no botao de signin
-            loginPage.loginWithUser(userData.userSuccess);
+            loginPage.fillLoginForm(userData.userSuccess);
+
+            loginPage.clickLoginButton();
 
             //Espera a resposta do servidor
             cy.wait('@loginRequest').then((interception) => {
@@ -46,7 +48,9 @@ describe('Login', () => {
         //TC-002: Tentar fazer login com credenciais inválidas.
         it('TC-002 - Erro de autenticacao com credenciais incorretas', () => {
 
-            loginPage.loginWithUser(userData.userFail);
+            loginPage.fillLoginForm(userData.userFail);
+
+            loginPage.clickLoginButton();
 
             //Verifica se o usuário nao foi autenticado
             cy.wait('@loginRequest').then((interception) => {

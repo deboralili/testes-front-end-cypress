@@ -4,8 +4,8 @@ class LoginPage {
         const selectors = {
 
             //Inputs
-            usernameField: "[data-test='signin-username'] input",
-            passwordField: "[data-test='signin-password'] input",
+            usernameInput: "[data-test='signin-username'] input",
+            passwordInput: "[data-test='signin-password'] input",
 
             //Buttons & Links
             signinButton: "[data-test='signin-submit']",
@@ -31,15 +31,33 @@ class LoginPage {
         cy.get(this.selectorsList().signinForm).should('be.visible');
     }
 
-    loginWithUser(user) {
-        //Preenche o campo username com nome de usuario valido
-        cy.get(this.selectorsList().usernameField).type(user.username);
+    fillUsernameField(username) {
+        const usernameField = cy.get(this.selectorsList().usernameInput);
 
-        //Preenche o campo password com senha correspondente valida
-        cy.get(this.selectorsList().passwordField).type(user.password);
+        if (username === "" || username === undefined) {
+            usernameField.focus().blur();
+        } else {
+            usernameField.type(username);
+        }
+    }
 
-        //Clica no botão para fazer login
+    fillPasswordField(password) {
+        const passwordField = cy.get(this.selectorsList().passwordInput);
+
+        if (password === "" || password === undefined) {
+            passwordField.focus().blur();
+        } else {
+            passwordField.type(password);
+        }
+    }
+
+    clickLoginButton() {
         cy.get(this.selectorsList().signinButton).click();
+    }
+
+    fillLoginForm(user) {
+        this.fillUsernameField(user.username);
+        this.fillPasswordField(user.password);
     }
 
     checkWrongCredentialMessage() {
