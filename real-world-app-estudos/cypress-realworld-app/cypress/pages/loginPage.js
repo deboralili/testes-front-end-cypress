@@ -2,12 +2,21 @@ class LoginPage {
 
     selectorsList() {
         const selectors = {
-            usernameField: "[data-test='signin-username']",
-            passwordField: "[data-test='signin-password']",
+
+            //Inputs
+            usernameField: "[data-test='signin-username'] input",
+            passwordField: "[data-test='signin-password'] input",
+
+            //Buttons & Links
             signinButton: "[data-test='signin-submit']",
+            signUpLink: "[data-test='signup']",
+
+            //Form
             signinForm: ".SignInForm-form",
-            wrongCredentialAlert: "[data-test='signin-error']",
-            signUpLink: "[data-test='signup']"
+
+            //Alert Messages
+            wrongCredentialAlert: "[data-test='signin-error'] .MuiAlert-message"
+
         }
         return selectors;
     }
