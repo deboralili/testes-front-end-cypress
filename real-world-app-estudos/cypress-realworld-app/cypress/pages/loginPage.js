@@ -60,8 +60,8 @@ class LoginPage {
         this.fillPasswordField(user.password);
     }
 
-    checkWrongCredentialMessage() {
-        cy.get(this.selectorsList().wrongCredentialAlert).should('be.visible');
+    checkErrorMessage(errorSelector, expectedMessage) {
+        cy.get(errorSelector).should('be.visible').and('contain', expectedMessage);
     }
 }
 

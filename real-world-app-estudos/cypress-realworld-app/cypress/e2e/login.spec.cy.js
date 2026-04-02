@@ -58,7 +58,10 @@ describe('Login', () => {
             });
 
             //Verifica se aparece mensagem de erro na tela
-            loginPage.checkWrongCredentialMessage();
+            loginPage.checkErrorMessage(
+                loginPage.selectorsList().wrongCredentialAlert,
+                "Username or password is invalid"
+            );
 
             //Verifica se o usuario permanece na pagina de login
             loginPage.checkLoginPage();
