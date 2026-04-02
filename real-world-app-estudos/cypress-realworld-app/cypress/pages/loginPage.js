@@ -63,6 +63,14 @@ class LoginPage {
     checkErrorMessage(errorSelector, expectedMessage) {
         cy.get(errorSelector).should('be.visible').and('contain', expectedMessage);
     }
+
+    checkSignInButtonIsDisabled() {
+        cy.get(this.selectorsList().signinButton).should('be.disabled');
+    }
+
+    checkSignInButtonEnabled() {
+        cy.get(this.selectorsList().signinButton).should('be.enabled');
+    }
 }
 
 export default LoginPage

@@ -26,6 +26,8 @@ describe('Login', () => {
             //Preeche formulario e clica no botao de signin
             loginPage.fillLoginForm(userData.userSuccess);
 
+            loginPage.checkSignInButtonEnabled();
+
             loginPage.clickLoginButton();
 
             //Espera a resposta do servidor
@@ -49,6 +51,8 @@ describe('Login', () => {
         it('TC-002 - Erro de autenticacao com credenciais incorretas', () => {
 
             loginPage.fillLoginForm(userData.userFail);
+
+            loginPage.checkSignInButtonEnabled();
 
             loginPage.clickLoginButton();
 
