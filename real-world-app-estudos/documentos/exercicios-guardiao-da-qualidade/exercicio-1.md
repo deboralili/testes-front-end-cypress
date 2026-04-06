@@ -87,13 +87,18 @@ describe('Login', () => {
     });
 
     //SC-001: O usuário deve conseguir realizar login ao informar credenciais válidas.
-    context('Quando o usuario informa credenciais validas', () => {
+    context('Autenticacao com Credenciais Validas', () => {
 
         //TC-001: Efetuar login com credenciais válidas
-        it('Deve autenticar o usuario com sucesso', () => {
+        it('TC-001 - Login realizado com sucesso', () => {
 
             //Preeche formulario e clica no botao de signin
-            loginPage.loginWithUser(userData.userSuccess);
+            loginPage.fillLoginForm(userData.userSuccess);
+
+            loginPage.checkSignInButtonEnabled();
+
+            loginPage.clickLoginButton();
+
             //Espera a resposta do servidor
             cy.wait('@loginRequest').then((interception) => {
                 //Garante que a requisicao ocorreu com sucesso
@@ -108,6 +113,7 @@ describe('Login', () => {
         });
     });
 });
+
 ```
 ![Evidência: Automação Login com Sucesso](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/teste-automatizado/Automation-EvidenceLoginSuccess.gif)
 
@@ -127,12 +133,16 @@ describe('Login', () => {
     });
 
     //SC-002: O sistema deve exibir uma mensagem de erro ao tentar fazer login com credenciais inválidas.
-    context('Quando o usuario informa credenciais invalidas', () => {
+    context('Tentativa de Autenticacao com Dados Invalidos', () => {
 
         //TC-002: Tentar fazer login com credenciais inválidas.
-        it('Deve exibir mensagem de erro', () => {
+        it('TC-002 - Erro de autenticacao com credenciais incorretas', () => {
 
-            loginPage.loginWithUser(userData.userFail);
+            loginPage.fillLoginForm(userData.userFail);
+
+            loginPage.checkSignInButtonEnabled();
+
+            loginPage.clickLoginButton();
 
             //Verifica se o usuário nao foi autenticado
             cy.wait('@loginRequest').then((interception) => {
@@ -140,13 +150,18 @@ describe('Login', () => {
             });
 
             //Verifica se aparece mensagem de erro na tela
-            loginPage.checkWrongCredentialMessage();
+            loginPage.checkErrorMessage(
+                loginPage.selectorsList().wrongCredentialAlert,
+                "Username or password is invalid"
+            );
 
             //Verifica se o usuario permanece na pagina de login
             loginPage.checkLoginPage();
         });
     });
+
 });
+
 ```
 ![Evidência: Automação Falha de Login com Credenciais Invalidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/login/teste-automatizado/Automation-EvidenceLoginFail.gif)
 
@@ -155,45 +170,11 @@ describe('Login', () => {
 ```javascript
 describe('Cadastro de Usuario', () => {
 
-  const randomUser = {
-    firstName: chance.first(),
-    lastName: chance.last(),
-    username: chance.word(),
-    password: chance.string({ length: 4 })
-  }
-
-  beforeEach(() => {
-    signUpPage.accessSignUpPage();
-  });
-
-  //SC-003: O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
-  context('Quando o usuario insere informacoes validas', () => {
-    //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
-    it('Deve efetuar o cadastro com sucesso', () => {
-
-      signUpPage.signUpWithAnyUser(randomUser);
-
-      loginPage.checkLoginPage();
-
-      loginPage.loginWithUser(randomUser);
-
-      homePage.checkHomePage();
-
-      homePage.checkUsernameLogged(randomUser.username);
-    });
-  });
-
-})
-```
-![Evidência: Automação Cadastro de Usuário com informações válidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-EvidenceSignUpSuccess.gif)
-
-**Automação do Caso de Teste: Tentar registrar um novo usuário com informações incompletas.**
-
-```javascript
-describe('Cadastro de Usuario', () => {
   let randomUser;
+
   beforeEach(() => {
     const password = chance.string({ length: 4 });
+
     randomUser = {
       firstName: chance.first(),
       lastName: chance.last(),
@@ -201,6 +182,63 @@ describe('Cadastro de Usuario', () => {
       password: password,
       confirmPassword: password
     }
+
+    signUpPage.accessSignUpPage();
+  });
+
+  //SC-003: O usuário deve ser capaz de se cadastrar no sistema ao inserir informações válidas.
+  context('Cadastro com Informacoes Validas', () => {
+    //TC-003: Efetuar cadastro de um novo usuário com informações válidas.
+    it('TC-003 - Cadastro realizado com sucesso', () => {
+
+      cy.intercept('POST', '**/users').as('postUser');
+      cy.intercept('POST', '**/login').as('postLogin');
+
+      signUpPage.fillSignUpForm(randomUser);
+
+      signUpPage.checkSignUpButtonEnabled();
+
+      signUpPage.clickSignUpButton();
+
+      cy.wait('@postUser').its('response.statusCode').should('eq', 201);
+
+      loginPage.checkLoginPage();
+
+      loginPage.fillLoginForm(randomUser);
+
+      loginPage.checkSignInButtonEnabled();
+
+      loginPage.clickLoginButton();
+
+      cy.wait('@postLogin').its('response.statusCode').should('eq', 200);
+
+      homePage.checkHomePage();
+
+      homePage.checkUsernameLogged(randomUser.username);
+    });
+  });
+});
+```
+![Evidência: Automação Cadastro de Usuário com informações válidas](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-EvidenceSignUpSuccess.gif)
+
+**Automação do Caso de Teste: Tentar registrar um novo usuário com informações incompletas.**
+
+```javascript
+describe('Cadastro de Usuario', () => {
+
+  let randomUser;
+
+  beforeEach(() => {
+    const password = chance.string({ length: 4 });
+
+    randomUser = {
+      firstName: chance.first(),
+      lastName: chance.last(),
+      username: chance.word(),
+      password: password,
+      confirmPassword: password
+    }
+
     signUpPage.accessSignUpPage();
   });
 
@@ -208,7 +246,7 @@ describe('Cadastro de Usuario', () => {
   // cadastrar um novo usuário sem preencher todos os campos obrigatórios.
   context('Validacao de Campos Obrigatorios', () => {
     //TC-004: Cadastro de usuário com campo "First Name" vazio.
-    it('Cadastro de Usuario com campo "First Name" vazio', () => {
+    it('TC-004 - Cadastro de Usuario com campo "First Name" vazio', () => {
 
       const userWithEmptyFirstName = {
         ...randomUser, firstName: ""
@@ -225,7 +263,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-005: Cadastro de usuário com campo "Last Name" vazio.
-    it('Cadastro de Usuario com campo "Last Name" vazio', () => {
+    it('TC-005 - Cadastro de Usuario com campo "Last Name" vazio', () => {
       const userWithEmptyLastName = {
         ...randomUser, lastName: ""
       };
@@ -241,7 +279,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-006: Cadastro de usuário com campo "Username" vazio.
-    it('Cadastro de Usuario com campo "Username" vazio', () => {
+    it('TC-006 - Cadastro de Usuario com campo "Username" vazio', () => {
 
       const userWithEmptyUsername = {
         ...randomUser, username: ""
@@ -258,7 +296,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-007: Cadastro de usuário com campo "Password" vazio.
-    it('Cadastro de Usuario com campo "Password" vazio', () => {
+    it('TC-007 - Cadastro de Usuario com campo "Password" vazio', () => {
 
       const userWithEmptyPassword = {
         ...randomUser, password: ""
@@ -276,7 +314,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-008: Cadastro de usuário com campo "Confirm Password" vazio.
-    it('Cadastro de Usuario com campo "Confirm Password" vazio', () => {
+    it('TC-008 - Cadastro de Usuario com campo "Confirm Password" vazio', () => {
 
       const userWithEmptyConfirmPassword = {
         ...randomUser, confirmPassword: ""
@@ -294,7 +332,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-009: Cadastro de usuário com todos os campos vazios.
-    it('Cadastro de Usuario com todos os campos vazios', () => {
+    it('TC-009 - Cadastro de Usuario com todos os campos vazios', () => {
 
       const userWithEmptyFields = {
         ...randomUser, firstName: "", lastName: "", username: "", password: "", confirmPassword: ""
@@ -332,7 +370,7 @@ describe('Cadastro de Usuario', () => {
     });
 
     //TC-010: Cadastro de usuário com os campos "Password" e "Confirm Password" vazios.
-    it('Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
+    it('TC-010 - Cadastro de Usuario com os campos "Password" e "Confirm Password" vazios', () => {
 
       const userWithEmptyPasswordAndConfirmPassword = {
         ...randomUser, password: "", confirmPassword: ""
@@ -354,8 +392,7 @@ describe('Cadastro de Usuario', () => {
 
     });
   });
-
-})
+});
 ```
 ![Evidência: Automação Cadastro de Usuário com campo Fist Name vazio](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/evidencias/signUp/teste-automatizado/Automation-UserRegistrationWithoutFirstName.gif)
 
