@@ -85,6 +85,17 @@
       "balance": 0,
       "createdAt": "2026-01-21T17:06:29.781Z",
       "modifiedAt": "2026-01-21T17:06:29.781Z"
+    },
+    {
+      "id": "iKiyWUych",
+      "uuid": "3712ed7c-41b9-4f1a-bbb0-403f0e8abc76",
+      "firstName": "Floyd",
+      "lastName": "McKinney",
+      "username": "se",
+      "password": "$2a$10$jIWJOA1lkBFzbQYEPT2g..7ITe8nJ7fJkZHmfhhb3mGsfx/eTJAAi",
+      "balance": 0,
+      "createdAt": "2026-04-06T21:03:41.128Z",
+      "modifiedAt": "2026-04-06T21:03:41.128Z"
     }
   ],
   "contacts": [
