@@ -14,9 +14,19 @@ Imagine que a feature "Enviar Dinheiro" é uma funcionalidade crítica no aplica
 
 1. Caso de Teste: Enviar dinheiro com saldo suficiente.
    - Descrição: Verifique se é possível enviar dinheiro para um amigo quando o saldo da conta é suficiente.
- 
+     
+[Link para o Cenário de Teste SC-005](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
+<br/>
+[Link para o Cenário de Teste SC-007](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
+<br/>
+
 2. Caso de Teste: Enviar dinheiro com saldo insuficiente.
    - Descrição: Garanta que o sistema exiba uma mensagem de erro ao tentar enviar dinheiro sem saldo suficiente.
+     
+[Link para o Cenário de Teste SC-006](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
+<br/>
+[Link para o Cenário de Teste SC-008](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
+<br/>
 
 ## Automação dos casos de teste
 
