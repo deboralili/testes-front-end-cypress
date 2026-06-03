@@ -17,6 +17,8 @@ Imagine que a feature "Enviar Dinheiro" é uma funcionalidade crítica no aplica
      
 [Link para o Cenário de Teste SC-005](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
 <br/>
+[Link para o Caso de Teste TC-011](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/transaction-test-cases/TC-011-Transferencia-manual-com-saldo-suficiente.md)
+<br/>
 [Link para o Cenário de Teste SC-007](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
 <br/>
 
@@ -24,6 +26,8 @@ Imagine que a feature "Enviar Dinheiro" é uma funcionalidade crítica no aplica
    - Descrição: Garanta que o sistema exiba uma mensagem de erro ao tentar enviar dinheiro sem saldo suficiente.
      
 [Link para o Cenário de Teste SC-006](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
+<br/>
+[Link para o Caso de Teste TC-012](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/transaction-test-cases/TC-012-Transferencia-manual-com-saldo-insuficiente.md)
 <br/>
 [Link para o Cenário de Teste SC-008](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionScenarios.md)
 <br/>
