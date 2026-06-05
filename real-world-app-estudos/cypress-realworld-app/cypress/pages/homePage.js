@@ -62,7 +62,7 @@ class HomePage {
         cy.contains(expectedSummary).should('be.visible');
     }
 
-    checkUpdatedUserBalance(newBalance) {
+    checkUserBalance(newBalance) {
         cy.get(this.selectorsList().userBalance).should('be.visible').and('have.text', '$' + newBalance);
 
     }

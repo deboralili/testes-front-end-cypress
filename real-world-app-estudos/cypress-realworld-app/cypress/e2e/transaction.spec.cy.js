@@ -59,10 +59,23 @@ describe('Enviar Dinheiro', () => {
         });
     });
 
-    /* context('Enviar dinheiro com saldo insuficiente', () => {
+    context('Enviar dinheiro com saldo insuficiente', () => {
 
-        it('Deve exibir mensagem de erro ao enviar dinheiro sem saldo suficiente', () => {
-            
+        it.only('Deve exibir mensagem de erro ao enviar dinheiro sem saldo suficiente', () => {
+            homePage.clickNewTransactionButton();
+            homePage.selectContact();
+
+            let description = 'Saldo insuficiente';
+
+            homePage.fillTransactionForm((userBalance+1), description);
+            homePage.clickPaymentButton();
+
+            cy.wait('@transactionRequest').then((interception) => {
+                expect(interception.response.statusCode).to.equal(400);
+            });
+
+            //homePage.checkSuccessTransactionAlert('Insufficient funds');
+            //homePage.checkUserBalance(userBalance);
         });
-    }); */
+    });
 }); 
