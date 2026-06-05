@@ -6,5 +6,9 @@
     "userFail": {
         "username": "test",
         "password": "test"
+    },
+    "userNative": {
+        "username": "Judah_Dietrich50",
+        "password": "s3cret"
     }
 }
