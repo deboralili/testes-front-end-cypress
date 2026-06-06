@@ -16,6 +16,19 @@ class HomePage {
             returnButton: "[data-test='new-transaction-return-to-transactions']",
             anotherTransactionButton: "[data-test='new-transaction-create-another-transaction']",
             // successTransactionAlert: "[data-test='alert-bar-success']"
+
+            //Get Started Banner
+            nextButton: "[data-test='user-onboarding-next']",
+            bankNameInput: "[data-test='bankaccount-bankName-input']",
+            routingNumberInput: "[data-test='bankaccount-routingNumber-input']",
+            accountNumberInput: "[data-test='bankaccount-accountNumber-input']",
+            bankAccountSubmitButton: "[data-test='bankaccount-submit']",
+            doneButton: "[data-test='user-onboarding-next']",
+
+            //Tab
+            mineTab: "[data-test='nav-personal-tab']",
+            createTransactionButton: "[data-test='transaction-list-empty-create-transaction-button']",
+            transactionList: "[data-test='transaction-list']"
         }
 
         return selectors;
@@ -53,7 +66,7 @@ class HomePage {
         cy.get(this.selectorsList().paymentButton).click();
     }
 
-    checkSuccessTransactionAlert(expectedMessage) {
+    checkExpectedMessage(expectedMessage) {
         //cy.get(this.selectorsList().successTransactionAlert).should('be.visible').and('contain', expectedMessage);
         cy.contains(expectedMessage).should('be.visible');
     }
@@ -75,6 +88,38 @@ class HomePage {
         cy.get(this.selectorsList().anotherTransactionButton).should('be.enabled');
     }
 
-}
+    clickNextButton() {
+        cy.get(this.selectorsList().nextButton).click();
+    }
 
+    fillBankAccountForm(bankName, routingNumber, accountNumber) {
+        cy.get(this.selectorsList().bankNameInput).type(bankName);
+        cy.get(this.selectorsList().routingNumberInput).type(routingNumber);
+        cy.get(this.selectorsList().accountNumberInput).type(accountNumber);
+    }
+
+    clickSubmitBankAccount() {
+        cy.get(this.selectorsList().bankAccountSubmitButton).click();
+    }
+
+    clickDoneButton() {
+        cy.get(this.selectorsList().doneButton).click();
+    }
+
+    accessMineTab() {
+        cy.get(this.selectorsList().mineTab).click();
+    }
+
+    checkCreateTransactionButtonVisible() {
+        cy.get(this.selectorsList().createTransactionButton).should('be.visible');
+    }
+
+    checkTransactionListIsVisible() {
+        cy.get(this.selectorsList().transactionList).should('be.visible');
+    }
+
+    checkTransactionListNotExists() {
+        cy.get(this.selectorsList().transactionList).should('not.exist');
+    }
+}
 export default HomePage

@@ -8,6 +8,8 @@
         "password": "test"
     },
     "userNative": {
+        "firstName": "Lia",
+        "lastName": "Rosenbaum",
         "username": "Judah_Dietrich50",
         "password": "s3cret"
     }

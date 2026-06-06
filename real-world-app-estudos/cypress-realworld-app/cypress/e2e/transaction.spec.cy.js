@@ -51,7 +51,7 @@ describe('Enviar Dinheiro', () => {
                 expect(interception.response.statusCode).to.equal(200);
             });
 
-            homePage.checkSuccessTransactionAlert('Transaction Submitted');
+            homePage.checkExpectedMessage('Transaction Submitted');
             //homePage.checkTransactionSummary('Paid $' + (userBalance-1) + ' for ' + description);
             //homePage.checkUpdatedUserBalance(1);
             //homePage.checkReturnButtonEnabled();
@@ -61,7 +61,7 @@ describe('Enviar Dinheiro', () => {
 
     context('Enviar dinheiro com saldo insuficiente', () => {
 
-        it.only('Deve exibir mensagem de erro ao enviar dinheiro sem saldo suficiente', () => {
+        it('Deve exibir mensagem de erro ao enviar dinheiro sem saldo suficiente', () => {
             homePage.clickNewTransactionButton();
             homePage.selectContact();
 
@@ -74,7 +74,7 @@ describe('Enviar Dinheiro', () => {
                 expect(interception.response.statusCode).to.equal(400);
             });
 
-            //homePage.checkSuccessTransactionAlert('Insufficient funds');
+            //homePage.checkExpectedMessage('Insufficient funds');
             //homePage.checkUserBalance(userBalance);
         });
     });
