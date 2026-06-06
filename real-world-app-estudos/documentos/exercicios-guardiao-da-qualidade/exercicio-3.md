@@ -34,12 +34,30 @@ Exercício: Automação dos Casos de Teste "Visualizar Histórico de Transaçõe
 
 Agora que você criou os casos de teste, é hora de automatizá-los usando o Cypress.io. Certifique-se de que o projeto "Real World App" esteja configurado corretamente no seu ambiente de desenvolvimento. Crie scripts de teste para os casos de teste definidos nos exercícios anteriores:
 
+Links úteis da resolução dos exercícios de automação:
+
+[SignUp Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/signUpPage.js)
+<br/>
+[Login Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/loginPage.js)
+<br/>
+[Home Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/homePage.js)
+<br/>
+[Transaction History Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/e2e/transactionHistory.spec.cy.js)
+<br/>
+[User Data](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/fixtures/userData.json)
+
 Automação do Caso de Teste: Visualizar histórico de transações com sucesso.
 
 ```javascript
 describe('Visualizar histórico de transações com sucesso', () => {
   it('Deve exibir o histórico de transações de um usuário corretamente', () => {
-    // Implemente os passos do caso de teste aqui
+    loginPage.accessLoginPage();
+        loginPage.fillLoginForm(userData.userNative);
+        loginPage.clickLoginButton();
+
+        homePage.accessMineTab();
+        homePage.checkTransactionListIsVisible();
+        cy.get(homePage.selectorsList().transactionList).should('contain', userData.userNative.firstName + ' ' + userData.userNative.lastName);
   });
 });
 ```
@@ -49,7 +67,33 @@ Automação do Caso de Teste: Tentar visualizar o histórico de transações de 
 ```javascript
 describe('Tentar visualizar o histórico de transações sem transações anteriores', () => {
   it('Deve exibir uma mensagem indicando que o usuário não possui transações anteriores', () => {
-    // Implemente os passos do caso de teste aqui
+    const password = chance.string({ length: 4 });
+
+      let randomUser = {
+        firstName: chance.first(),
+        lastName: chance.last(),
+        username: chance.word(),
+        password: password,
+        confirmPassword: password
+      }
+
+      signUpPage.accessSignUpPage();
+      signUpPage.fillSignUpForm(randomUser);
+      signUpPage.clickSignUpButton();
+
+      loginPage.accessLoginPage();
+      loginPage.fillLoginForm(randomUser);
+      loginPage.clickLoginButton();
+
+      homePage.clickNextButton();
+      homePage.fillBankAccountForm('Bank Name', '123456789', '987654321');
+      homePage.clickSubmitBankAccount();
+      homePage.clickDoneButton();
+
+      homePage.accessMineTab();
+      homePage.checkExpectedMessage('No Transactions');
+      homePage.checkCreateTransactionButtonVisible();
+      homePage.checkTransactionListNotExists();
   });
 });
 ```
