@@ -12,12 +12,21 @@ Exercício: Criação de Casos de Teste para a Feature "Visualizar Histórico de
 
 A funcionalidade "Visualizar Histórico de Transações" é crucial no aplicativo Real World App, permitindo aos usuários rastrear todas as transações realizadas. Vamos criar casos de teste para garantir que essa funcionalidade funcione corretamente:
 
-Caso de Teste: Visualizar histórico de transações com sucesso.
+1. Caso de Teste: Visualizar histórico de transações com sucesso.
+  - Descrição: Verifique se é possível visualizar o histórico de transações de um usuário com suas transações anteriores exibidas corretamente.
 
-Descrição: Verifique se é possível visualizar o histórico de transações de um usuário com suas transações anteriores exibidas corretamente.
-Caso de Teste: Tentar visualizar o histórico de transações de um usuário sem transações anteriores.
+[Link para o Cenário de Teste SC-009](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionHistoryScenarios.md)
+<br/>
+[Link para o Caso de Teste TC-013](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/transaction-history-test-cases/TC-013-Visualizacao-Historico-de-Transacao-com-sucesso.md)
+<br/>
 
-Descrição: Garanta que o sistema exiba uma mensagem indicando que o usuário não possui transações anteriores caso tente visualizar o histórico sem transações registradas.
+2. Caso de Teste: Tentar visualizar o histórico de transações de um usuário sem transações anteriores.
+  - Descrição: Garanta que o sistema exiba uma mensagem indicando que o usuário não possui transações anteriores caso tente visualizar o histórico sem transações registradas.
+
+[Link para o Cenário de Teste SC-010](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/cenarios/transactionHistoryScenarios.md)
+<br/>
+[Link para o Caso de Teste TC-014](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/documentos/casos-de-teste/transaction-history-test-cases/TC-014-Visualizacao-Historico-de-Transacao-sem-Registro.md)
+<br/>
 
 ## Automação dos casos de teste
 
