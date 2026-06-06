@@ -38,13 +38,36 @@ Exercício: Automação dos Casos de Teste "Enviar Dinheiro"
 
 Agora que você criou os casos de teste, é hora de automatizá-los usando o Cypress.io. Certifique-se de que o projeto "Real World App" esteja configurado corretamente no seu ambiente de desenvolvimento. Crie scripts de teste para os casos de teste definidos nos exercícios anteriores:
 
+Links úteis da resolução dos exercícios de automação:
+[Transaction Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/e2e/transaction.spec.cy.js)
+<br/>
+[User Data](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/fixtures/userData.json)
+<br/>
+[Home Page](https://github.com/deboralili/testes-front-end-cypress/blob/main/real-world-app-estudos/cypress-realworld-app/cypress/pages/homePage.js)
+<br/>
 
 Automação do Caso de Teste: Enviar dinheiro com saldo suficiente.
 
 ```javascript
 describe('Enviar dinheiro com saldo suficiente', () => {
   it('Deve enviar dinheiro com sucesso', () => {
-    // Implemente os passos do caso de teste aqui
+    homePage.clickNewTransactionButton();
+            homePage.selectContact();
+
+            cy.log(userBalance);
+
+            let description = 'Saldo suficiente';
+
+            homePage.fillTransactionForm((userBalance-1), description);
+            homePage.clickPaymentButton();
+
+            //cy.pause();
+
+            cy.wait('@transactionRequest').then((interception) => {
+                expect(interception.response.statusCode).to.equal(200);
+            });
+
+            homePage.checkSuccessTransactionAlert('Transaction Submitted');
   });
 });
 ```
@@ -53,7 +76,19 @@ Automação do Caso de Teste: Enviar dinheiro com saldo insuficiente.
 ```javascript
 describe('Enviar dinheiro com saldo insuficiente', () => {
   it('Deve exibir mensagem de erro ao enviar dinheiro sem saldo suficiente', () => {
-    // Implemente os passos do caso de teste aqui
+    homePage.clickNewTransactionButton();
+            homePage.selectContact();
+
+            let description = 'Saldo insuficiente';
+
+            homePage.fillTransactionForm((userBalance+1), description);
+            homePage.clickPaymentButton();
+
+            cy.wait('@transactionRequest').then((interception) => {
+                expect(interception.response.statusCode).to.equal(400);
+            });
+
+            //homePage.checkSuccessTransactionAlert('Insufficient funds');
   });
 });
 ```
