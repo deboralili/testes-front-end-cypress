@@ -1,0 +1,37 @@
+{
+  "name": "cypress-heroes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "npm --prefix ./client run build && npm --prefix ./server run build",
+    "setup": "npm run resetdb",
+    "resetdb": "npm --prefix ./server run prisma:resetdb",
+    "dev": "concurrently \"npm --prefix ./client run dev\" \"npm --prefix ./server run start:dev\"",
+    "start:ci": "concurrently \"npm --prefix ./client run preview\" \"npm --prefix ./server run start:ci\"",
+    "test:e2e:ci": "npm --prefix ./client run test:e2e:ci",
+    "test:api:ci": "npm --prefix ./server run test:api:ci",
+    "test:ct:ci": "npm --prefix ./client run test:ct:ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elylucas/cypress-heroes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elylucas/cypress-heroes/issues"
+  },
+  "homepage": "https://github.com/elylucas/cypress-heroes#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "rimraf": "^4.1.0"
+  },
+  "prisma": {
+    "schema": "server/prisma/schema.prisma"
+  }
+}
