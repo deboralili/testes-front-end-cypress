@@ -124,6 +124,45 @@ class HomePage {
         this.checkHeroSavesIsVisible();
         this.checkHeroPowerIsVisible();
     }
+
+    clickCreateHeroButton() {
+        cy.get(this.selectorsList().createHeroButton).click();
+    }
+
+    checkHeroInformation(name, price, fans, saves, power, avatar) {
+        cy.contains(this.selectorsList().heroCard, name)
+            .within(() => {
+                cy.get(this.selectorsList().heroName)
+                    .should('be.visible')
+                    .and('have.text', name)
+
+                cy.get(this.selectorsList().heroPrice)
+                    .should('be.visible')
+                    .and('contain', price)
+
+                cy.get(this.selectorsList().heroFans)
+                    .should('be.visible')
+                    .and('contain', fans)
+
+                cy.get(this.selectorsList().heroSaves)
+                    .should('be.visible')
+                    .and('contain', saves)
+
+                cy.get(this.selectorsList().heroPower)
+                    .should('be.visible')
+                    .and('contain', power)
+
+                if (avatar === "" || avatar === undefined) {
+                    cy.get('img')
+                        .should('be.visible')
+                        .and('have.attr', 'src', "/images/empty-avatar.webp")
+                } else {
+                    cy.get('img')
+                        .should('be.visible')
+                        .and('have.attr', 'alt', avatar)
+                }
+            })
+    }
 }
 
 export default HomePage;

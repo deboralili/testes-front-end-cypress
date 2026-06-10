@@ -6,16 +6,16 @@ const homePage = new HomePage();
 
 describe('Login', () => {
 
+  beforeEach(() => {
+    //Acompanha requisição de login
+    cy.intercept('POST', '/auth').as('loginRequest');
+
+    // Acessar formulario de login
+    loginPage.accessLoginForm();
+  });
+
   //SC-001 - O usuário deve conseguir realizar login ao informar credenciais válidas.
   context('Login com credenciais válidas', () => {
-
-    beforeEach(() => {
-      //Acompanha requisição de login
-      cy.intercept('POST', '/auth').as('loginRequest');
-
-      // Acessar formulario de login
-      loginPage.accessLoginForm();
-    });
 
     //TC-001 - Efetuar login com credenciais válidas
     it('Deve autenticar o usuario com sucesso', () => {
@@ -54,14 +54,6 @@ describe('Login', () => {
   });
 
   context('Login com credenciais inválidas', () => {
-
-    beforeEach(() => {
-      //Acompanha requisição de login
-      cy.intercept('POST', '/auth').as('loginRequest');
-
-      //Acessar formulario de login
-      loginPage.accessLoginForm();
-    });
 
     //TC-003 - Tentar realizar login com e-mail válido e senha inválida
     it('Deve exibir mensagem de erro ao tentar autenticar com senha inválida', () => {
