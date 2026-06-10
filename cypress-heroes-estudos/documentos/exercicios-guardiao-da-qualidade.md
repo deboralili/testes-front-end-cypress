@@ -20,12 +20,19 @@ Lista de exercícios Cypress Heroes
 
 2️⃣ Login inválido
 
+[Login Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/cypress-heroes-estudos/cypress-heroes/client/cypress/e2e/login.spec.cy.js)
+
 3️⃣ Listagem de heróis após login
+
+[Hero List Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/cypress-heroes-estudos/cypress-heroes/client/cypress/e2e/heroList.spec.cy.js)
 
 4️⃣ Criar novo herói
 
+[Create Hero Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/cypress-heroes-estudos/cypress-heroes/client/cypress/e2e/createHero.spec.cy.js)
+
 5️⃣ Controle de permissão (UI)
 
+[Permissions Spec](https://github.com/deboralili/testes-front-end-cypress/blob/main/cypress-heroes-estudos/cypress-heroes/client/cypress/e2e/permissions.spec.cy.js)
 
 É normal encontrar desafios ao longo do caminho, e é por isso que incentivamos que qualquer dúvida seja postada na nossa comunidade no Facebook. Estamos aqui para oferecer toda a assistência possível. Quando postarem uma dúvida, não se esqueçam de adicionar as [TAGS] relevantes para facilitar a organização. Lembrem-se de manter o foco nos estudos e continuar praticando para se consolidarem como QA Engineer capazes de assegurar a qualidade de aplicações de maneira eficaz.
 
