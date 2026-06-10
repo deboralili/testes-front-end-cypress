@@ -163,6 +163,10 @@ class HomePage {
                 }
             })
     }
+
+    checkAlertMessage(message){
+        cy.contains(message).should('be.visible');
+    }
 }
 
 export default HomePage;
